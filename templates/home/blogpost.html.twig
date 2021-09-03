@@ -20,7 +20,7 @@
 
         <!-- / .row -->
         <div class="row">
-            {% for blogpost in blogposts %}
+
             <div
                     class="col-12  col-lg-4 d-flex">
 
@@ -32,15 +32,19 @@
 
                         <!-- Heading -->
                         <h3 class="mt-auto">
-                            {{blogpost.titre}}
+
                         </h3>
 
                         <!-- Text -->
                         <p class="mb-0 text-muted">
-                            {{ blogpost.contenu |u.truncate(150,'...', false) }}
+
                         </p>
 
                     </a>
+
+                    <!-- Image -->
+
+                    <img src="{{ asset('img/violette2.jpg') }}" alt="..." class="img-fluid d-md-none "/>
 
                     <!-- Meta -->
                     <a class="card-meta mt-auto" href="#!">
@@ -50,7 +54,7 @@
 
                                                <!-- Date -->
                         <p class="h6 text-uppercase text-muted mb-0 ms-auto">
-                            <time datetime="2019-05-02">Publiée le {{ blogpost.createdAt|date('d/m/Y') }}</time>
+                            <time datetime="2019-05-02">Publiée le </time>
                         </p>
 
                     </a>
@@ -58,7 +62,7 @@
                 </div>
 
             </div>
-            {% endfor %}
+
 
 
 
