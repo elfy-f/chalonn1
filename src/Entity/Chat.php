@@ -114,6 +114,11 @@ class Chat
      */
     private $commentaires;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $miseenavant;
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -379,6 +384,18 @@ class Chat
                 $commentaire->setChat(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMiseenavant(): ?bool
+    {
+        return $this->miseenavant;
+    }
+
+    public function setMiseenavant(?bool $miseenavant): self
+    {
+        $this->miseenavant = $miseenavant;
 
         return $this;
     }

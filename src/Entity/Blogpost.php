@@ -40,7 +40,7 @@ class Blogpost
     private $files;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable=false)
+     * @ORM\Column(type="datetime_immutable", nullable=true)
      */
     private $createdAt;
 

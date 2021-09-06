@@ -31,16 +31,26 @@
                     <a  href="{{path('actualites')}}" class=" nav-link" >Actualités</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarAccount" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarAccount" data-bs-toggle="dropdown" href="{{path('portfolio')}}" aria-haspopup="true" aria-expanded="false">
                         Nos chats à l'adoption
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarAccount">
 
-                            <li class="dropdown-item dropend">
-                                <a href="#"></a>
-                            </li>
-
+                        {% for categorie in categorieNavbar() %}
+                        <li class="dropdown-item dropend">
+                            <a href="{{ path('portfolio_categorie' , {'slug': categorie.slug}) }}"></a>
+                        </li>
+                         {% endfor %}
                     </ul>
+                <li class="nav-item dropdown">
+                    <a  href="" class=" nav-link" >Nos chats libres</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a  href="#" class=" nav-link" >Nos disparus</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a  href="#" class=" nav-link" >Nos partenaires</a>
+                </li>
                 <li class="nav-item">
                     <a href="{{path('a_propos')}}" class="nav-link">
                         A propos

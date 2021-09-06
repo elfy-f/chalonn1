@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Categorie;
 use App\Entity\Chat;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -34,6 +35,21 @@ class ChatRepository extends ServiceEntityRepository
     }
 
 
+    /**
+     * @return Chat[] Returns an array of Chat objects
+     */
+
+    public function findAllMiseenavant(Categorie $categorie): array
+    {
+        return $this->createQueryBuilder('p')
+            ->where(':categorie MEMBER OF p.categorie')
+            ->andWhere('p.miseenavant= TRUE')
+            ->setParameter('categorie',$categorie)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Chat[] Returns an array of Chat objects
     //  */
@@ -62,4 +78,7 @@ class ChatRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllPortfolio(Categorie $categorie)
+    {
+    }
 }

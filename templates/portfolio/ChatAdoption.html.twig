@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos chats à l'adoption par categories{% endblock %}
+
+{% block body %}
+    <!-- WELCOME -->
+    <section class="pt-12 pt-md-14 pb-12 pb-md-15 bg-gray-900" style="margin-top: -87px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                    <!-- Headin -->
+                    <h1 class="display-2 fw-bold text-black">
+                        <br>
+                        Les catégories de nos chats à l'adoption.
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Shape -->
+    <div class="position-relative">
+        <div class="shape shape-bottom shape-flip-x svg-shim text-light">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880"></path></svg>
+
+        </div>
+    </div> <!-- / .row -->
+
+
+
+    <!-- CONTENT -->
+    <section class="py-8 py-md-11 mt-n10 mt-md-n14">
+        <div class="container">
+            <div class="row" id="portfolio" data-isotope='{"layoutMode": "fitRows"}'>
+
+                {% for categorie in categories %}
+                    {% set img = categorie.chats|last %}
+
+                    <div class="col-12 col-md-4 ux">
+
+                        <!-- Card -->
+                        <a class="card lift lift-lg shadow-light-lg mb-7" href="{{path('portfolio_categorie', {'slug':categorie.slug})}}">
+
+                            <img class="card-img-top"  src="{{ img.file }}" alt="..."/>
+                            <div class="card-body">
+                                <div class="shape shape-bottom-100 shape-fluid-x svg-shim text-white">
+                                    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 48h2880V0h-720c1442.5 52 720 0 720 0h0v48z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="mb-0">{{ categorie.nom }}</h4>
+                                <small>{{ categorie.description }}</small>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

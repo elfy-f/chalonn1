@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos chats à l'adoption par categories{% endblock %}
+
+{% block body %}
+    <!-- WELCOME -->
+
+    <section data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black" style="margin-top: -87px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                    <!-- Headin -->
+                    <h1 class="display-2 fw-bold text-black">
+                        <br>
+                        {{categorie.nom}}
+                    </h1>
+                    <p class="lead text-white-75 mb-4">
+                        {{ categorie.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Shape -->
+    <div class="position-relative">
+        <div class="shape shape-bottom shape-flip-x svg-shim text-light">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720c1442.5 52 720 0 720 0h0v48z"></path></svg>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTENT -->
+    <section class="py-8 py-md-11 mt-n10 mt-md-n14">
+        <div class="container">
+            <div class="row" id="portfolio" data-isotope='{"layoutMode": "masonry"}'>
+
+                {% for chat in chats %}
+                    <div class="col-12 col-md-4 ">
+
+                        <!-- Card -->
+                        <a class="card shadow-light-lg mb-7" href="#!" data-bigpicture='{"imgSrc": "{{ chat.file }}}'>
+                            <div class="card-zoom">
+                                <img class="card-img"  src="{{ chat.file }}" alt="..."/>
+
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+{% endblock %}
