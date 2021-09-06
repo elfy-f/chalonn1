@@ -119,6 +119,11 @@ class Chat
      */
     private $miseenavant;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $reserve;
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -396,6 +401,18 @@ class Chat
     public function setMiseenavant(?bool $miseenavant): self
     {
         $this->miseenavant = $miseenavant;
+
+        return $this;
+    }
+
+    public function getReserve(): ?bool
+    {
+        return $this->reserve;
+    }
+
+    public function setReserve(?bool $reserve): self
+    {
+        $this->reserve = $reserve;
 
         return $this;
     }

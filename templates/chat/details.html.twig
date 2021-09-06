@@ -1,0 +1,184 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <!-- CONTENT -->
+    <div class="container-fluid px-md-0">
+        <div class="row justify-content-between gx-0 mx-md-0 mx-md-0 mb-6 mb-md-2">
+            <div class="col-12 col-md-4  vh-md-100 mx-auto" style="top: 0;">
+
+                <!-- Sidebar -->
+                <aside class="flex-grow-1 py-8 py-md-10">
+
+                    <!-- Brand -->
+                    <div >
+                        <h2>{{ chat.nom }}</h2>
+                            {% for categorie in chat.categorie %}
+                                <span class="badge bg-secondary">{{ categorie.nom }}</span>
+                            {% endfor %}
+                    </div>
+
+                    <p class="list-group list-group-flush">
+
+                        {% if chat.reserve %}
+                            <li class=" list-group-item">
+                        <h6 class="d-flex mb-0 text-uppercase">
+                        <strong> Il est Réservé!!</strong>
+                        <span class="ms-auto"></span>
+                    </h6>
+                    </li>
+                    {% endif %}
+
+                        <li class="list-group-item">
+
+                            <!-- Heading -->
+                    <h6 class="d-flex mb-0 text-uppercase">
+                        Nom
+                        <span class="ms-auto">{{ chat.nom }}</span>
+                    </h6>
+
+                    </li>
+
+                        <li class="list-group-item">
+
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Date de naissance
+                        <span class="ms-auto">{{ chat.dateNaissance|date('d/m/Y') }}</span>
+                            </h6>
+
+                        </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Race
+                            <span class="ms-auto">{{ chat.race }}</span>
+                        </h6>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Robe
+                            <span class="ms-auto">{{ chat.pelage }}</span>
+                        </h6>
+
+                    </li>
+
+                        <li class="list-group-item">
+
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Sexe
+                                <span class="ms-auto">{{ chat.sexe }}</span>
+                            </h6>
+
+                        </li>
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                           Stérilisé
+                            <span class="ms-auto">{{ chat.sterelise }}</span>
+                        </h6>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Histoire
+                            <span class="ms-auto">{{ chat.histoire }}</span>
+                        </h6>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Caractère
+                            <span class="ms-auto">{{ chat.caractere }}</span>
+                        </h6>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Teste Fiv (sida du chat)
+                            <span class="ms-auto">{{ chat.testFiv }}</span>
+                        </h6>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Teste Felv (Leucose du chat)
+                            <span class="ms-auto">{{ chat.testFelv }}</span>
+                        </h6>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Frais d'adoption
+                            <span class="ms-auto">{{ chat.frais }}
+                            €</span>
+                        </h6>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <!-- Heading -->
+                        <h6 class="d-flex mb-0 text-uppercase">
+                           Contacter la famille d'accueil
+                            <span class="ms-auto">{{ chat.contact }}</span>
+                        </h6>
+
+                    </li>
+
+                    </ul>
+
+                </aside>
+
+            </div>
+            <div class="col-12 col-md-7">
+
+                <!-- Images -->
+                <section class="pt-md-10">
+                    <img class="w-50 h-auto" src="{{ asset('img/image2accueil.jpg') }}" alt="...">
+                    <img class="w-50 h-auto" src="{{ asset('img/accueil.jpg') }}" alt="...">
+                    <img class="w-50 h-auto" src="{{ asset('img/violette2.jpg') }}" alt="...">
+                    <img class="w-50 h-auto" src="assets/img/portfolio/portfolio-24.jpg" alt="...">
+                    <img class="w-50 h-auto" src="assets/img/portfolio/portfolio-25.jpg" alt="...">
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SHAPE -->
+    <div class="position-relative" style="z-index: 1;">
+        <div class="shape shape-bottom shape-fluid-x text-light">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+
+
+
+{% endblock %}
+
+

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Chat;
 use App\Repository\ChatRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,8 +25,8 @@ class ChatController extends AbstractController
 
         $chats = $paginator->paginate(
             $data,
-            $request->query->getInt('page',1),
-            6
+            $request->query->getInt('page',1),/*numero de page*/
+            6 /*limite par page*/
         );
 
 
@@ -34,4 +35,17 @@ class ChatController extends AbstractController
             'chats' => $chats,
         ]);
     }
+
+    /**
+     * @Route ("/chats/{slug}", name="chat_details")
+     */
+    public function details(Chat $chat): Response
+    {
+        return  $this->render('chat/details.html.twig', [
+            'chat'=>$chat
+        ]);
+    }
+
+
 }
+

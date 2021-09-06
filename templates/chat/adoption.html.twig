@@ -17,10 +17,10 @@
                     {% for chat in chats%}
                     <div class="col-12 col-md-6 d-flex">
                         <div class="card mb-6 shadow-light-lg lift lift-lg">
-                            <a class="card-img-top" href="#!">
+                            <a class="card-img-top" href="{{path('chat_details', {'slug':chat.slug })}}">
                                 <img src="{{ asset('img/violette2.jpg')  }}" alt="..." class="card-img-top">
                             </a>
-                            <a class="card-body" href="#!">
+                            <a class="card-body" href="{{path('chat_details', {'slug':chat.slug })}}">
                                 <h3>
                                     {{ chat.nom }}
                                 </h3>
@@ -34,7 +34,7 @@
                                     {{ chat.caractere |u.truncate(200,'...',false)}}
                                 </p>
                             </a>
-                            <a class="card-meta mt-auto" href="#!">
+                            <a class="card-meta mt-auto" href="{{path('chat_details', {'slug':chat.slug })}}">
                                 <hr class="card-meta-divider">
                                 <p class="h6 text-uppercase text-muted mb-0 ms-auto">
                                 </p>
