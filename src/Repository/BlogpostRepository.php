@@ -17,7 +17,26 @@ class BlogpostRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Blogpost::class);
+
     }
+
+    /**
+     * @return Blogpost[] Returns an array of Chat objects
+     */
+
+    public function lastThree()
+    {
+        return $this->createQueryBuilder('b')
+            ->orderBy('b.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
+
+
 
     // /**
     //  * @return Blogpost[] Returns an array of Blogpost objects

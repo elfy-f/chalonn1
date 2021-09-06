@@ -18,4 +18,10 @@ npm install
 npm run build
 
 ``````
+### Ajouter des données de tests
+``````bash
+php bin/console doctrine:fixture:load
+
+
+``````
 

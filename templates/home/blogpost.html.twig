@@ -20,49 +20,52 @@
 
         <!-- / .row -->
         <div class="row">
+            {% for blogpost in blogposts %}
+                <div
+                        class="col-12  col-lg-4 d-flex">
 
-            <div
-                    class="col-12  col-lg-4 d-flex">
+                    <!-- Card -->
+                    <div class="card shadow-light-lg lift lift-lg" data-aos="fade-up" data-aos-delay="100">
 
-                <!-- Card -->
-                <div class="card shadow-light-lg lift lift-lg" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Body -->
+                        <a class="card-body my-auto" href="#!">
 
-                    <!-- Body -->
-                    <a class="card-body my-auto" href="#!">
+                            <!-- Heading -->
+                            <h3 class="mt-auto">
+                                {{blogpost.titre}}
+                            </h3>
 
-                        <!-- Heading -->
-                        <h3 class="mt-auto">
+                            <!-- Text -->
+                            <p class="mb-0 text-muted">
+                                {{ blogpost.contenu |u.truncate(150,'...', false) }}
+                            </p>
 
-                        </h3>
+                        </a>
+                        <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url({{ blogpost.slug }})">
 
-                        <!-- Text -->
-                        <p class="mb-0 text-muted">
+                            <!-- Image -->
 
-                        </p>
+                            <img src="{{ asset('img/violette2.jpg') }}" alt="..." class="img-fluid  ">
 
-                    </a>
 
-                    <!-- Image -->
 
-                    <img src="{{ asset('img/violette2.jpg') }}" alt="..." class="img-fluid d-md-none "/>
+                        </a>                        <!-- Meta -->
+                        <a class="card-meta mt-auto" href="#!">
 
-                    <!-- Meta -->
-                    <a class="card-meta mt-auto" href="#!">
+                            <!-- Divider -->
+                            <hr class="card-meta-divider">
 
-                        <!-- Divider -->
-                        <hr class="card-meta-divider">
+                            <!-- Date -->
+                            <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                                <time datetime="2019-05-02">Publiée le {{ blogpost.createdAt|date('d/m/Y') }}</time>
+                            </p>
 
-                                               <!-- Date -->
-                        <p class="h6 text-uppercase text-muted mb-0 ms-auto">
-                            <time datetime="2019-05-02">Publiée le </time>
-                        </p>
+                        </a>
 
-                    </a>
+                    </div>
 
                 </div>
-
-            </div>
-
+            {% endfor %}
 
 
 
