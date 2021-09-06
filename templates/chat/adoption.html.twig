@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Chats à l'adoption{% endblock %}
+
+    {% block body %}
+        <section class="pt-7 pt-md-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col_12">
+                        <h2 class="mb-0">
+                            Les petits nouveaux
+                        </h2>
+                        <p class=" mb-5 text-muted">
+
+                        </p>
+                    </div>
+                    {% for chat in chats%}
+                    <div class="col-12 col-md-6 d-flex">
+                        <div class="card mb-6 shadow-light-lg lift lift-lg">
+                            <a class="card-img-top" href="#!">
+                                <img src="{{ asset('img/violette2.jpg')  }}" alt="..." class="card-img-top">
+                            </a>
+                            <a class="card-body" href="#!">
+                                <h3>
+                                    {{ chat.nom }}
+                                </h3>
+                                <p class="mb-0 text-muted">
+                                    {{ chat.sexe }}
+                                </p>
+                                <p class="mb-0 text-muted">
+                                    {{ chat.dateNaissance }}
+                                </p>
+                                <p class="mb-0 text-muted">
+                                    {{ chat.caractere |u.truncate(200,'...',false)}}
+                                </p>
+                            </a>
+                            <a class="card-meta mt-auto" href="#!">
+                                <hr class="card-meta-divider">
+                                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor%}
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                {% do chats.setPageRange(2) %}
+                {{ knp_pagination_render(chats, 'base/pagination.html.twig') }}
+            </div>
+
+        </section>
+    {% endblock %}
+

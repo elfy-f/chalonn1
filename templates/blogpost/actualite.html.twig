@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Actualité{% endblock %}
+
+    {% block body %}
+        <section class="pt-7 pt-md-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col_12">
+                        <h2 class="mb-0">
+                            Les dernières nouvelles
+                        </h2>
+                        <p class=" mb-5 text-muted">
+
+                        </p>
+                    </div>
+                    {% for blogpost in blogposts%}
+                        <div class="col-12 col-md-4 d-flex">
+                            <div class="card  shadow-light-lg lift lift-lg">
+                                <a class="card-img-top" href="#!">
+                                    <img src="{{ asset('img/accueil.jpg')  }}" alt="..." class="card-img-top">
+                                </a>
+                                <a class="card-body" href="#!">
+                                    <h3>
+                                        {{ blogpost.titre }}
+                                    </h3>
+                                    <p class="mb-0 text-muted">
+                                        {{ blogpost.contenu | u.truncate(200,'...',false) }}
+                                    </p>
+
+                                </a>
+                                <a class="card-meta mt-auto" href="#!">
+                                    <hr class="card-meta-divider">
+                                    <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                                        {#   <time>Publiée le {{ blogpost.createAt|date('d/m/Y') }}</time>#}
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor%}
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-6">
+                {% do blogposts.setPageRange(2) %}
+                {{ knp_pagination_render(blogposts, 'base/pagination.html.twig') }}
+            </div>
+
+        </section>
+    {% endblock %}
+
