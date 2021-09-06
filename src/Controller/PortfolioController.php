@@ -12,21 +12,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class PortfolioController extends AbstractController
 {
     /**
-     * @Route("/ChatAdoption", name="portfolio")
+     * @Route("/chatadoption", name="portfolio")
      */
     public function index(CategorieRepository $categorieRepository): Response
     {
-        return $this->render('portfolio/ChatAdoption.html.twig', [
+        return $this->render('portfolio/chatadoption.html.twig', [
             'categories' => $categorieRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route ("/ChatAdoption/{slug}",name="portfolio_categorie")
+     * @Route ("/portfolio/{slug}",name="portfolio_categorie")
      */
     public function categorie(Categorie $categorie, ChatRepository $chatRepository):Response
     {
-        $chats = $chatRepository->findAllPortfolio($categorie);
+        $chats = $chatRepository->findAllMiseenavant($categorie);
 
         return $this->render('portfolio/categorie.html.twig',[
             'categorie'=>$categorie,
