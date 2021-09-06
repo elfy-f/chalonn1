@@ -27,7 +27,7 @@
                 <!-- Card -->
                 <a class="card card-row shadow-light-lg mb-6 lift lift-lg" data-aos="fade-right">
                     <div class="row ">
-                        <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url({{ chat.file }});" href="{{path('actualites')}}">
+                        <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url({{ chat.file }});" href="{{path('chat_details', {'slug':chat.slug })}}">
 
                             <!-- Image -->
 
@@ -40,7 +40,7 @@
                 <div
                         class="col-12 col-md-6">
                 <!-- Body -->
-                <a class="card-body" href="{{path('actualites')}}">
+                <a class="card-body" href="{{path('chat_details', {'slug':chat.slug })}}">
 
                     <!-- Heading -->
                     <h3>
