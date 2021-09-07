@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PortfolioController extends AbstractController
 {
     /**
-     * @Route("/chatadoption", name="portfolio")
+     * @Route("/chatCategorie", name="portfolio")
      */
     public function index(CategorieRepository $categorieRepository): Response
     {

@@ -87,6 +87,7 @@ class AppFixtures extends Fixture
                         ->setFile('/img/violette2.jpg')
                         ->addCategorie(($categorie))
                         ->setUser($user);
+                        
 
                     $manager->persist($chat);
                 }
