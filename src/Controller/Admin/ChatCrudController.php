@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Chat;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -52,4 +53,9 @@ class ChatCrudController extends AbstractCrudController
         ];
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return$crud
+            ->setDefaultSort(['createdAt'=>'DESC']);
+    }
 }

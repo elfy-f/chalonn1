@@ -21,7 +21,7 @@ class ChatController extends AbstractController
         Request $request
    ) : Response
     {
-        $data = $chatRepository->findAll();
+        $data = $chatRepository->findby([], ['id'=> 'DESC']);
 
         $chats = $paginator->paginate(
             $data,
