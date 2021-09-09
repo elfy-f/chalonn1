@@ -3,12 +3,12 @@
 {% block title %}A propos{% endblock %}
 
 {% block body %}
-    <section data-jarallax data-speed=".8" class="py-15 overlay overlay-black overlay-60 jarallax" style="background-image: url({{ asset('#') }})">
+    <section data-jarallax data-speed=".8" class="py-15 overlay overlay-black overlay-60 jarallax" style="background-color:rgba(117, 190, 218, 0.5); /* 0.5 - semi-transparent */; />
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-7">
+                <div class="col-6 col-md-7">
                     <blockquote class="blockquote mb-2">
-                        <p class="h2 text-black">
+                        <h4 class "text-black">
 
                             Au mois de juin 2013, Chenil Service a été sollicité par la Mairie pour effectuer un ramassage de chats errants, dans une rue de la ville de Merdrignac.<br>
                             Nous comprenons très bien leur intervention et ne jugeons pas. Par contre face à cette solution extrême, nous pouvons proposer une alternative. <br>
@@ -22,13 +22,17 @@
                             <br>
 
 
-                        </p>
+                        </h4>
                         <footer class="blockquote-footer text-black-50 mb-0">
 
                         </footer>
                     </blockquote>
+                    <div class="col-6 col-md-3">
+                        <img src="{{ asset('img/image2accueil.jpg') }}">
+                    </div>
                 </div>
             </div>
         </div>
+
     </section>
     {% endblock %}

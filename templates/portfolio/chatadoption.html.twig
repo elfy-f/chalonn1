@@ -36,14 +36,14 @@
             <div class="row" id="portfolio" data-isotope='{"layoutMode": "fitRows"}'>
 
                 {% for categorie in categories %}
-                    {% set img = categorie.chats|last %}
+                    {% set chat = categorie.chats|last %}
 
                     <div class="col-12 col-md-4 ux">
 
                         <!-- Card -->
                         <a class="card lift lift-lg shadow-light-lg mb-7" href="{{path('portfolio_categorie', {'slug':categorie.slug})}}">
 
-                            <img class="card-img-top"  src="#" alt="..."/>
+                            <img class="card-img-top"  src="{{ (vich_uploader_asset(chat,'imageFile')) }}" alt="..."/>
                             <div class="card-body">
                                 <div class="shape shape-bottom-100 shape-fluid-x svg-shim text-white">
                                     <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -18,7 +18,7 @@
                     <div class="col-12 col-md-6 d-flex">
                         <div class="card mb-6 shadow-light-lg lift lift-lg">
                             <a class="card-img-top" href="{{path('chat_details', {'slug':chat.slug })}}">
-                                <img src="/uploads/{{chat.file }}" alt="..." class="card-img-top">
+                                <img src="{{ vich_uploader_asset(chat,'imageFile') }}" alt="..." class="card-img-top">
                             </a>
                             <a class="card-body" href="{{path('chat_details', {'slug':chat.slug })}}">
                                 <h3>
