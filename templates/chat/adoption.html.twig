@@ -18,7 +18,7 @@
                     <div class="col-12 col-md-6 d-flex">
                         <div class="card mb-6 shadow-light-lg lift lift-lg">
                             <a class="card-img-top" href="{{path('chat_details', {'slug':chat.slug })}}">
-                                <img src="{{ asset('img/violette2.jpg')  }}" alt="..." class="card-img-top">
+                                <img src="/uploads/{{chat.file }}" alt="..." class="card-img-top">
                             </a>
                             <a class="card-body" href="{{path('chat_details', {'slug':chat.slug })}}">
                                 <h3>
@@ -28,7 +28,7 @@
                                     {{ chat.sexe }}
                                 </p>
                                 <p class="mb-0 text-muted">
-                                    {{ chat.dateNaissance }}
+                                   Né(e) le: {{ chat.dateNaissance |date('d/m/Y')}}
                                 </p>
                                 <p class="mb-0 text-muted">
                                     {{ chat.caractere |u.truncate(200,'...',false)}}

@@ -6,9 +6,13 @@ use App\Repository\ChatRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ChatRepository::class)
+ * @Vich\Uploadable
  */
 class Chat
 {
@@ -90,14 +94,16 @@ class Chat
     private $file;
 
     /**
+     * @Vich\UploadableField(mapping="chat_images", fileNameProperty="file")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $createdAt;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $portfolio;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="chats")
@@ -291,16 +297,48 @@ class Chat
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getFile(): ?string
     {
         return $this->file;
     }
 
+    /**
+     * @param string|null $file
+     * @return $this
+     */
     public function setFile(?string $file): self
     {
         $this->file = $file;
 
         return $this;
+    }
+
+
+    /**
+     * @param File|null $file
+     */
+    public function setImageFile(?File $imagefile = null)
+    {
+        $this->imageFile = $imagefile;
+
+        //Very important:
+        //It is required that as least on field changes if yoi are using Doctrine,
+        //other the event listeners won't be called and the file is lost
+        if ($imagefile) {
+            //if 'updateAt' is not defined in your entity, use another property
+            $this->createdAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 
     public function getCreatedAt(): ?\DateTime
@@ -315,17 +353,6 @@ class Chat
         return $this;
     }
 
-    public function getPortfolio(): ?bool
-    {
-        return $this->portfolio;
-    }
-
-    public function setPortfolio(bool $portfolio): self
-    {
-        $this->portfolio = $portfolio;
-
-        return $this;
-    }
 
     public function getUser(): ?User
     {

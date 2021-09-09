@@ -11,6 +11,7 @@
 
                 <!-- Sidebar -->
                 <aside class="flex-grow-1 py-8 py-md-10">
+                    <ul>
 
                     <!-- Brand -->
                     <div >
@@ -25,7 +26,7 @@
                         {% if chat.reserve %}
                             <li class=" list-group-item">
                         <h6 class="d-flex mb-0 text-uppercase">
-                        <strong> Il est Réservé!!</strong>
+                        <strong>  est Réservé!!</strong>
                         <span class="ms-auto"></span>
                     </h6>
                     </li>
@@ -160,11 +161,8 @@
 
                 <!-- Images -->
                 <section class="pt-md-10">
-                    <img class="w-50 h-auto" src="{{ asset('img/image2accueil.jpg') }}" alt="...">
-                    <img class="w-50 h-auto" src="{{ asset('img/accueil.jpg') }}" alt="...">
-                    <img class="w-50 h-auto" src="{{ asset('img/violette2.jpg') }}" alt="...">
-                    <img class="w-50 h-auto" src="assets/img/portfolio/portfolio-24.jpg" alt="...">
-                    <img class="w-50 h-auto" src="assets/img/portfolio/portfolio-25.jpg" alt="...">
+                    <img class="w-50 h-auto" src="/uploads/{{ chat.file }}" alt="...">
+
                 </section>
 
             </div>

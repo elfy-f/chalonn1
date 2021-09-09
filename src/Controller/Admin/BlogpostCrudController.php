@@ -6,8 +6,11 @@ use App\Entity\Blogpost;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class BlogpostCrudController extends AbstractCrudController
 {
@@ -21,9 +24,16 @@ class BlogpostCrudController extends AbstractCrudController
     {
         return [
             TextField::new('titre'),
-            TextField::new('slug'),
             TextareaField::new('contenu'),
             DateField::new('createdAt'),
+            SlugField::new('slug')->setTargetFieldName('titre')->hideOnIndex(),
+
+            ImageField::new('file')
+                ->setBasePath('uploads/actu')
+                ->setUploadDir('public/uploads/actu')
+                ->setUploadedFileNamePattern('[randomhash], [extension]')
+                ->setRequired(false),
+
         ];
     }
 

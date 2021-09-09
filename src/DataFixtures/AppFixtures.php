@@ -65,7 +65,7 @@ class AppFixtures extends Fixture
                     ->setSlug($faker->slug());
                 $manager->persist($categorie);
 
-                //création de 2 Chatd/categorie
+                //création de 2 Chats/categorie
 
                 for ($j=0; $j<2; $j++){
                     $chat =new Chat();
@@ -82,9 +82,10 @@ class AppFixtures extends Fixture
                         ->setContact($faker->text())
                         ->setPelage($faker->text())
                         ->setRace($faker->text())
-                        ->setPortfolio($faker->randomElement([true, false]))
+                        ->setMiseenavant($faker->randomElement([true, false]))
+                        ->setReserve($faker->randomElement([true, false]))
                         ->setFrais($faker->randomFloat(2,100, 200))
-                        ->setFile('/img/violette2.jpg')
+                        ->setFile('img/violette2.jpg')
                         ->addCategorie(($categorie))
                         ->setUser($user);
                         
