@@ -25,7 +25,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
     {
 
         return [
-            BeforeEntityPersistedEvent::class => ['setDateAndUser'],
+            BeforeEntityPersistedEvent::class => ['setDateAndUserAndFiles'],
         ];
     }
 
@@ -56,5 +56,9 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 
 
 }
+
+    public function setDateAndUserAndFiles()
+    {
+    }
 }
 

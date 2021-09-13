@@ -320,17 +320,17 @@ class Chat
     /**
      * @param File|null $file
      */
-    public function setImageFile(File $imagefile = null)
+    public function setImageFile($imagefile ): void
     {
 
-
+        $this->imageFile=$imagefile;
         //Very important:
         //It is required that as least on field changes if yoi are using Doctrine,
         //other the event listeners won't be called and the file is lost
         if ($imagefile) {
             //if 'updateAt' is not defined in your entity, use another property
             $this->createdAt = new \DateTime('now');
-            $this->imageFile=$imagefile;
+
         }
     }
 

@@ -85,7 +85,7 @@ class AppFixtures extends Fixture
                         ->setMiseenavant($faker->randomElement([true, false]))
                         ->setReserve($faker->randomElement([true, false]))
                         ->setFrais($faker->randomFloat(2,100, 200))
-                        ->setFile('img/violette2.jpg')
+                        ->setFile('violette2.jpg')
                         ->addCategorie(($categorie))
                         ->setUser($user);
                         

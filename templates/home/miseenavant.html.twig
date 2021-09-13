@@ -27,11 +27,11 @@
                 <!-- Card -->
                 <a class="card card-row shadow-light-lg mb-6 lift lift-lg" data-aos="fade-right">
                     <div class="row ">
-                        <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url{{ vich_uploader_asset(chat,'imageFile') }};" href="{{path('chat_details', {'slug':chat.slug })}}">
+                        <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url({{ vich_uploader_asset(chat,'imageFile') }});" href="{{path('chat_details', {'slug':chat.slug })}}">
 
                             <!-- Image -->
 
-                            <img src="{{ vich_uploader_asset(chat,'imageFile') }}" alt="..." class="img-fluid  ">
+                            <img src='{"imgSrc":"{{ vich_uploader_asset(chat, 'imageFile') }}"}' alt="..." class="img-fluid  ">
 
 
 
