@@ -3,7 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Chat;
+use App\Entity\Commentaire;
+use App\Form\CommentaireType;
 use App\Repository\ChatRepository;
+use App\Repository\CommentaireRepository;
+use App\Service\CommentaireService;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,10 +43,31 @@ class ChatController extends AbstractController
     /**
      * @Route ("/chats/{slug}", name="chat_details")
      */
-    public function details(Chat $chat): Response
+    public function details(
+        Chat $chat,
+         Request $request,
+        CommentaireService $commentaireService,
+         CommentaireRepository $commentaireRepository
+    ): Response
+
     {
+        $commentaires = $commentaireRepository->findCommentaires($chat);
+        $commentaire = new Commentaire();
+        $form = $this->createForm(CommentaireType::class, $commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $commentaire = $form->getData();
+            $commentaireService->persistCommentaire($commentaire, null, $chat);
+
+            return  $this->redirectToRoute('chat_details', ['slug'=> $chat->getSlug()]);
+        }
+
+
         return  $this->render('chat/details.html.twig', [
-            'chat'=>$chat
+            'chat'=>$chat,
+            'form'=>$form->createView(),
+            'commentaires'=>$commentaires,
         ]);
     }
 

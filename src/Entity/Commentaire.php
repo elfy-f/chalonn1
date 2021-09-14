@@ -33,7 +33,7 @@ class Commentaire
     private $contenu;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
@@ -46,6 +46,11 @@ class Commentaire
      * @ORM\ManyToOne(targetEntity=Blogpost::class, inversedBy="commentaires")
      */
     private $blogpost;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPublished;
 
     public function getId(): ?int
     {
@@ -88,12 +93,12 @@ class Commentaire
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
 
@@ -120,6 +125,18 @@ class Commentaire
     public function setBlogpost(?Blogpost $blogpost): self
     {
         $this->blogpost = $blogpost;
+
+        return $this;
+    }
+
+    public function getIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }
