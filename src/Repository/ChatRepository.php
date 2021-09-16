@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Classe\Search;
 use App\Entity\Categorie;
 use App\Entity\Chat;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -26,8 +27,8 @@ class ChatRepository extends ServiceEntityRepository
 
     public function lastThree()
     {
-       return $this->createQueryBuilder('p')
-       ->orderBy('p.id', 'DESC')
+       return $this->createQueryBuilder('c')
+       ->orderBy('c.id', 'DESC')
        ->setMaxResults(3)
        ->getQuery()
        ->getResult()
@@ -41,14 +42,39 @@ class ChatRepository extends ServiceEntityRepository
 
     public function findAllMiseenavant(Categorie $categorie): array
     {
-        return $this->createQueryBuilder('p')
-            ->where(':categorie MEMBER OF p.categorie')
-            ->andWhere('p.miseenavant= TRUE')
+        return $this->createQueryBuilder('c')
+            ->where(':categorie MEMBER OF c.categorie')
+            ->andWhere('c.miseenavant= TRUE')
             ->setParameter('categorie',$categorie)
             ->getQuery()
             ->getResult()
             ;
     }
 
+    /**
+     * Requete qui permet de récuperer les chats en fonction de la recherche de l'utilisateur
+     * @return Chat[]
+     */
+   public function findWithSearch (Search $search)
+   {
+        $query =$this
+            ->createQueryBuilder('c')
+            ->select('c', 'a')
+            ->join('c.categorie','a');
+
+        if(!empty($search->categories)){
+            $query=$query
+                ->andWhere('a.id IN (:categories)')
+                ->setParameter('categories', $search->categories);
+        }
+
+       if(!empty($search->string)){
+           $query=$query
+               ->andWhere('c.nom LIKE :string')
+               ->setParameter('string',"%{$search->string}%");
+       }
+
+        return $query->getQuery()->getResult();
+   }
 
 }
