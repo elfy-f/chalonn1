@@ -7,6 +7,7 @@ use App\Entity\Categorie;
 use App\Entity\Chat;
 use App\Entity\Commentaire;
 use App\Entity\User;
+use App\Entity\Utilisateur;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -38,6 +39,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Categorie', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('Commentaire', 'fas fa-comment', Commentaire::class);
         yield MenuItem::linkToCrud('Paramètre', 'fas fa-cog', User::class);
-
+        yield MenuItem::linkToCrud('Donnateur', 'fas fa-smile-beam', Utilisateur::class);
     }
 }

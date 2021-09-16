@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Faire un don {% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% include "base/nav.html.twig" %}
+</head>
+<body>
+
+<!-- CONTENT -->
+<section>
+    <div class="container  flex-column">
+        <div class="row align-items        justify-content-center gx-0 min-vh-100">
+            <div class="col-12 col-md-6 col-lg-4 py-8 py-md-11">
+
+                <!-- Heading -->
+                <h1 class="mb-0 fw-bold">
+                    Inscription
+                </h1>
+                </br></br>
+{{ form(form) }}
+
+
+
+
+
+            </div>
+            <div class="col-lg-7 offset-lg-1 align-self-stretch d-none d-lg-block" data-aos="fade-left">
+
+                <!-- Image -->
+                <div class="h-50 w-cover bg-cover" style="background-image: {{ asset('img/accueil.jpg') }};"></div>
+
+                <!-- Shape -->
+                <div class="shape shape-start shape-fluid-y text-white">
+                    <svg viewBox="0 0 100 1544" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v386l-50 772v386H0V0z" fill="currentColor"/></svg>            </div>
+
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+</section>
+
+
+
+
+
+
+{% include "base/footer.html.twig" %}
+
+
+
+</body>
+
+</html>

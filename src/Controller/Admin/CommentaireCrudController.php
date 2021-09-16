@@ -39,7 +39,7 @@ class CommentaireCrudController extends AbstractCrudController
     {
         return($actions)
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->disable(Action::DELETE, Action::NEW)
+
             ;
     }
 

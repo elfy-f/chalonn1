@@ -31,21 +31,7 @@
                     <a  href="{{path('actualites')}}" class=" nav-link" >Actualités</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarAccount" data-bs-toggle="dropdown" href="{{ path('portfolio') }}" aria-haspopup="true" aria-expanded="false">
-                        Nos chats à l'adoption
-                    </a>
 
-                    <ul class="dropdown-menu" aria-labelledby="navbarAccount">
-
-                        {% for categorie in categorieNavbar() %}
-                        <li class="dropdown-item dropend">
-                            <a href="{{ path('portfolio_categorie' , {'slug': categorie.slug}) }}"></a>
-                        </li>
-                         {% endfor %}
-
-                    </ul>
-                </li>
 
                 <li class="nav-item dropdown">
                     <a  href="" class=" nav-link" >Nos chats libres</a>
@@ -67,10 +53,14 @@
 
             </ul>
             <!-- Button -->
-            <a class="navbar-btn btn btn-sm btn-primary lift lift ms-auto" href="{{path('contact')}}">
+            <a class="navbar-btn btn btn-sm btn-secondary lift lift ms-auto" href="{{path('contact')}}">
                 Nous contacter
             </a>
 
+            <!-- Button -->
+            <a class="navbar-btn btn btn-sm btn-success lift lift ms-auto" href="{{path('register')}}">
+                Faire un don
+            </a>
         </div>
 
     </div>
