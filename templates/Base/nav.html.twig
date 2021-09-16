@@ -52,14 +52,37 @@
                 </li>
 
             </ul>
+
+{% if app.user %}
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a  href="{{path('compte')}}" class=" nav-link" >Mon compte</a>
+                </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a  href="{{path('app_logout')}}" class=" nav-link" >Déconnexion</a>
+                    </li>
+            </ul>
+
+            {% else %}
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a  href="{{path('app_login')}}" class=" nav-link" >Connexion</a>
+                        </li>
+
+
+                            <li class="nav-item dropdown">
+                                <a  href="{{path('register')}}" class=" nav-link" >Inscription</a>
+                            </li>
+                    </ul>
+
+
+            {% endif %}
+
             <!-- Button -->
             <a class="navbar-btn btn btn-sm btn-secondary lift lift ms-auto" href="{{path('contact')}}">
                 Nous contacter
-            </a>
-
-            <!-- Button -->
-            <a class="navbar-btn btn btn-sm btn-success lift lift ms-auto" href="{{path('register')}}">
-                Faire un don
             </a>
         </div>
 

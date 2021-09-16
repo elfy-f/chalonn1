@@ -26,7 +26,7 @@
                         {% if chat.reserve %}
                             <li class=" list-group-item">
                         <h6 class="d-flex mb-0 text-uppercase">
-                        <strong>  est Réservé!!</strong>
+                        <strong>  est Réservé(e)!!</strong>
                         <span class="ms-auto"></span>
                     </h6>
                     </li>
@@ -161,7 +161,7 @@
 
                 <!-- Images -->
                 <section class="pt-md-10">
-                    <img class="w-50 h-auto" src="{{ vich_uploader_asset(chat,'imageFile') }}" alt="...">
+                    <img src="uploads/chats/{{ chat.file }}" alt="..." class="card-img-top">
 
                 </section>
 

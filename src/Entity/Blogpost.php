@@ -11,7 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=BlogpostRepository::class)
- * @Vich\Uploadable
+ *
  */
 class Blogpost
 {
@@ -42,12 +42,6 @@ class Blogpost
      */
     private $file;
 
-
-    /**
-     * @Vich\UploadableField(mapping="actualite_images", fileNameProperty="file")
-     * @var File
-     */
-    private $imageFile;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -127,31 +121,6 @@ class Blogpost
         $this->file = $file;
 
         return $this;
-    }
-
-
-    /**
-     * @param File|null $file
-     */
-    public function setImageFile(?File $file = null)
-    {
-        $this->imageFile = $file;
-
-        //Very important:
-        //It is required that as least on field changes if yoi are using Doctrine,
-        //other the event listeners won't be called and the file is lost
-        if ($file) {
-            //if 'updateAt' is not defined in your entity, use another property
-            $this->createdAt = new \DateTime('now');
-        }
-    }
-
-    /**
-     * @return File|null
-     */
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
     }
 
 
