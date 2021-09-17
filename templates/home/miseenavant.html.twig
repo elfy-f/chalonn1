@@ -27,7 +27,9 @@
                 <!-- Card -->
                 <a class="card card-row shadow-light-lg mb-6 lift lift-lg" data-aos="fade-right">
                     <div class="row ">
-                        <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url(/uploads/chats/{{ chat.file }});" href="{{path('chat_details', {'slug':chat.slug })}}">
+                        <a class="col-12 col-md-6 bg-cover card-img-start"
+                           style="background-image: url(/uploads/chats/{{ chat.file }});"
+                           href="{{path('chat_details', {'nom':chat.nom })}}">
 
                             <!-- Image -->
 
@@ -35,43 +37,44 @@
 
 
 
-                </a>
+                        </a>
 
-                <div
-                        class="col-12 col-md-6">
-                <!-- Body -->
-                <a class="card-body" href="{{path('chat_details', {'slug':chat.slug })}}">
+                        <div
+                                class="col-12 col-md-6">
+                            <!-- Body -->
+                            <a class="card-body" href="{{path('chat_details', {'nom':chat.nom })}}">
 
-                    <!-- Heading -->
-                    <h3>
-                        {{ chat.nom }}
-                    </h3>
-
-
-                    <!-- Text -->
-                    <p class="mb-0 text-muted">
-                        {{ chat.caractere |u.truncate(200, '...', false) }}
-                    </p>
-
-                </a>
-                <!-- Meta -->
-                <a class="card-meta">
-
-                    <!-- Divider -->
-                    <hr
-                            class="card-meta-divider">
-
-                </a>
+                                <!-- Heading -->
+                                <h3>
+                                    {{ chat.nom }}
+                                </h3>
 
 
+                                <!-- Text -->
+                                <p class="mb-0 text-muted">
+                                    {{ chat.caractere |u.truncate(200, '...', false) }}
+                                </p>
+
+                            </a>
+                            <!-- Meta -->
+                            <a class="card-meta">
+
+                                <!-- Divider -->
+                                <hr
+                                        class="card-meta-divider">
+
+                            </a>
 
 
+
+
+                        </div>
+                    </div>
             </div>
-        </div>
-    </div>
-    </div>
 
-    {% endfor %}
+
+        {% endfor %}
+        </div>
     </div> <!-- / .row -->
     </div> <!-- / .container -->
 </section>

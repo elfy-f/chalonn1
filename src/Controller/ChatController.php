@@ -60,7 +60,7 @@ class ChatController extends AbstractController
     }
 
     /**
-     * @Route ("/chats/{slug}", name="chat_details")
+     * @Route ("/chats/{nom}", name="chat_details")
      */
     public function details(
         Chat $chat,
@@ -79,7 +79,7 @@ class ChatController extends AbstractController
             $commentaire = $form->getData();
             $commentaireService->persistCommentaire($commentaire, null, $chat);
 
-            return  $this->redirectToRoute('chat_details', ['slug'=> $chat->getSlug()]);
+            return  $this->redirectToRoute('chat_details', ['nom'=> $chat->getNom()]);
         }
 
 
