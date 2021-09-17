@@ -3,10 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Chat;
+use App\Form\MultipleType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -45,6 +47,7 @@ class ChatCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/chats')
                 ->setUploadedFileNamePattern('[randomhash], [extension]')
                 ->setRequired(false),
+
 
             AssociationField::new('categorie'),
             BooleanField::new('miseenavant'),

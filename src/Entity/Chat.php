@@ -125,6 +125,7 @@ class Chat
      */
     private $reserve;
 
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -419,6 +420,8 @@ class Chat
     {
         return $this->nom;
     }
+
+
 
 }
 

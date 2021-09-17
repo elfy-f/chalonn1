@@ -50,41 +50,50 @@
                         A propos
                     </a>
                 </li>
-
-            </ul>
-
-
-{% if app.user %}
-            <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a  href="{{path('compte')}}" class=" nav-link" >Mon compte</a>
+                    <a class="nav-link dropdown-toggle" id="navbarAccount" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        Faire un don
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarAccount">
+
+
+                        {% if app.user %}
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a  href="{{path('compte')}}" class=" nav-link" >Mon compte</a>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a  href="{{path('app_logout')}}" class=" nav-link" >Déconnexion</a>
+                                </li>
+                            </ul>
+
+                        {% else %}
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a  href="{{path('app_login')}}" class=" nav-link" >Me connecter</a>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a  href="{{path('register')}}" class=" nav-link" >M'inscrire</a>
+                                </li>
+                            </ul>
+
+
+                        {% endif %}
+
+                       </ul>
                 </li>
 
-
-                    <li class="nav-item dropdown">
-                        <a  href="{{path('app_logout')}}" class=" nav-link" >Déconnexion</a>
-                    </li>
-            </ul>
-
-            {% else %}
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a  href="{{path('app_login')}}" class=" nav-link" >Connexion</a>
-                        </li>
+                    <!-- Button -->
+                    <a class="navbar-btn btn btn-auto btn-secondary lift lift ms-auto" href="{{path('contact')}}">
+                        Nous contacter
+                    </a>
 
 
-                            <li class="nav-item dropdown">
-                                <a  href="{{path('register')}}" class=" nav-link" >Inscription</a>
-                            </li>
-                    </ul>
 
-
-            {% endif %}
-
-            <!-- Button -->
-            <a class="navbar-btn btn btn-sm btn-secondary lift lift ms-auto" href="{{path('contact')}}">
-                Nous contacter
-            </a>
         </div>
 
     </div>

@@ -43,7 +43,7 @@
                         <!-- Card -->
                         <a class="card lift lift-lg shadow-light-lg mb-7" href="{{path('portfolio_categorie', {'slug':categorie.slug})}}">
 
-                            <img class="card-img-top"  src='{"imgSrc":"{{ vich_uploader_asset(chat, 'imageFile') }}"}' alt="..."/>
+                            <img class="card-img-top"  src='{"imgSrc":"uploads/chats/{{ chat.file }}"}' alt="..."/>
                             <div class="card-body">
                                 <div class="shape shape-bottom-100 shape-fluid-x svg-shim text-white">
                                     <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
