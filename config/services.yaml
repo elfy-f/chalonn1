@@ -6,6 +6,8 @@
 parameters:
     chat_images: /uploads/chats
     actualite_images: /uploads/actu
+    multiple_image: /uploads/multiple
+    disparu_image: /uploads/disparu
 
 services:
     # default configuration for services in *this* file

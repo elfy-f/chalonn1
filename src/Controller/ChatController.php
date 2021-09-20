@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Classe\Search;
 use App\Entity\Chat;
 use App\Entity\Commentaire;
+use App\Form\ChatType;
 use App\Form\CommentaireType;
 use App\Form\SearchType;
 use App\Repository\ChatRepository;
@@ -89,8 +90,9 @@ class ChatController extends AbstractController
             'form'=>$form->createView(),
             'commentaires'=>$commentaires,
         ]);
-    }
 
+
+    }
 
 }
 

@@ -125,11 +125,17 @@ class Chat
      */
     private $reserve;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="chat")
+     */
+    private $images;
+
 
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
         $this->commentaires = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -419,6 +425,36 @@ class Chat
     public function __toString()
     {
         return $this->nom;
+    }
+
+    /**
+     * @return Collection|Images[]
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Images $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setChat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Images $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getChat() === $this) {
+                $image->setChat(null);
+            }
+        }
+
+        return $this;
     }
 
 

@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Nos disparus!{% endblock %}
+
+
+
+
+    {% block body %}
+        <!-- WELCOME -->
+
+        <section class="pt-12 pt-md-14 pb-12 pb-md-15 bg-gray-900" style="margin-top: -87px;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                        <!-- Headin -->
+                        <h1 class="display-2 fw-bold text-black">
+                            <br>
+                            Nos diparus.
+                        </h1>
+                        <h3>
+                            Pour ne pas oublier nos petits anges.
+                        </h3>
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- IMAGE -->
+        <section data-jarallax data-speed=".8" class="py-12 py-md-15 bg-cover jarallax" style="background-image: url(assets/img/covers/cover-8.jpg);"></section>
+        {% for disparu in disparus%}
+        <!-- HEADER -->
+        <section class="pt-8 pt-md-11">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+
+                        <!-- Heading -->
+                        <h1 class="display-4 text-center">
+                            {{disparu.nom }}
+                        </h1>
+
+                        <!-- Text -->
+                        <p class="lead mb-7 text-center text-muted">
+                            {{ disparu.histoire }}
+                        </p>
+
+                        <!-- Meta -->
+                        <div class="row align-items-center py-5 border-top border-bottom">
+                            <div class="col-auto">
+
+
+                            </div>
+
+                            <div class="col-auto">
+
+
+                                        <a class="card-img-slider">
+                                            <img src="uploads/disparu/{{ disparu.image}}" class="sm-col" alt="...">
+                                        </a>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div> <!-- / .row -->
+            </div> <!-- / .container -->
+        </section>
+
+        <!-- Shape -->
+        <div class="position-relative">
+            <div class="shape shape-bottom shape-flip-x svg-shim text-light">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880"></path></svg>
+
+            </div>
+        </div> <!-- / .row -->
+
+
+{% endfor %}
+
+
+
+
+
+
+    {% endblock %}
+
