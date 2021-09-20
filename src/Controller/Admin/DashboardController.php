@@ -7,6 +7,7 @@ use App\Entity\Categorie;
 use App\Entity\Chat;
 use App\Entity\Commentaire;
 use App\Entity\Disparu;
+use App\Entity\Libre;
 use App\Entity\User;
 use App\Entity\Utilisateur;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -39,9 +40,11 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Chat', 'fas fa-cat', Chat::class);
         yield MenuItem::linkToCrud('Categorie', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('Disparu', 'fas fa-cross', Disparu::class);
+        yield MenuItem::linkToCrud('Libre', 'fas fa-paw', Libre::class);
         yield MenuItem::linkToCrud('Commentaire', 'fas fa-comment', Commentaire::class);
         yield MenuItem::linkToCrud('Paramètre', 'fas fa-cog', User::class);
         yield MenuItem::linkToCrud('Donnateur', 'fas fa-smile-beam', Utilisateur::class);
+
 
     }
 }

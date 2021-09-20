@@ -71,6 +71,9 @@ class ChatController extends AbstractController
     ): Response
 
     {
+
+
+
         $commentaires = $commentaireRepository->findCommentaires($chat);
         $commentaire = new Commentaire();
         $form = $this->createForm(CommentaireType::class, $commentaire);

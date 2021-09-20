@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Site de chats libres{% endblock %}
+
+
+
+
+    {% block body %}
+        <!-- WELCOME -->
+
+        <section class="pt-12 pt-md-14 pb-12 pb-md-15 bg-gray-900" style="margin-top: -87px;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                        <!-- Headin -->
+                        <h1 class="display-2 fw-bold text-black">
+                            <br>
+                           Nos chats libres:
+                        </h1>
+                        <h3>
+                           Nous avons plusieurs sites de chats libres. Une personne les nourris, veilles à se qu'ils ne manque de rien et les amène chez le vétérinaire en cas de besoin.
+                           <br> Les chats sont identifiés, mais aussi stérilisés afin de reduire et controller la prolifération.
+                        </h3>
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- IMAGE -->
+        <section data-jarallax data-speed=".8" class="py-12 py-md-15 bg-cover jarallax" style="background-image: url(assets/img/covers/cover-8.jpg);"></section>
+        {% for libres in libres%}
+            <!-- HEADER -->
+            <section class="pt-8 pt-md-11">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+
+                            <!-- Heading -->
+                            <h1 class="display-4 text-center">
+                                {{libres.lieu }} <br><br>
+
+
+                                <div class="row justify-content-center">
+
+
+                                    <a class="row justify-content-center">
+                                        <img src="uploads/disparu/{{ libres.carte}}" class="sm-col" alt="...">
+                                    </a>
+
+
+                                </div>
+                            </h1>
+
+                            <!-- Text -->
+                            <p class="lead mb-7 text-center text-muted">
+                                {{ libres.histoire }}
+                            </p>
+
+                            <!-- Text -->
+                            <p class="lead mb-7 text-center text-muted">
+                             Merci à  {{ libres.nourrice }} qui veille sur les loulous.
+                            </p>
+
+
+                            <!-- Meta -->
+                            <div class="row align-items-center py-5 border-top border-bottom">
+                                <div class="col-auto">
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div> <!-- / .row -->
+                </div> <!-- / .container -->
+            </section>
+
+            <!-- Shape -->
+            <div class="position-relative">
+                <div class="shape shape-bottom shape-flip-x svg-shim text-light">
+                    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880"></path></svg>
+
+                </div>
+            </div> <!-- / .row -->
+
+
+        {% endfor %}
+
+
+
+
+
+
+    {% endblock %}
+

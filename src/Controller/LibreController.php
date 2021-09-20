@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Disparu;
+use App\Entity\Libre;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DisparuController extends AbstractController
+class LibreController extends AbstractController
 {
     private $entitymanager;
 
@@ -16,17 +17,15 @@ class DisparuController extends AbstractController
         $this->entitymanager= $entityManager;
     }
 
-
-
     /**
-     * @Route("/disparu", name="disparu")
+     * @Route("/libre", name="libre")
      */
-    public function index()
+    public function index(): Response
     {
-        $disparus= $this->entitymanager->getRepository(Disparu::class)->findAll();
+        $libres= $this->entitymanager->getRepository(Libre::class)->findAll();
 
-        return $this->render('disparu/index.html.twig', [
-            'disparus' => $disparus
+        return $this->render('libre/index.html.twig', [
+            'libres' => $libres,
         ]);
     }
 }

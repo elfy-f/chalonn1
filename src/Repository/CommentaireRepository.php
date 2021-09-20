@@ -31,10 +31,11 @@ class CommentaireRepository extends ServiceEntityRepository
             $object = 'chat';
         }
 
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.' .$object . '=:val')
-            ->andWhere('c.isPublished= true')
-            ->setParameter('val', $value->getId())
+        return $this->createQueryBuilder('o')
+           ->andWhere('o.' .$object . '= :val')
+            ->andWhere('o.isPublished= true')
+           ->setParameter('val', $value->getId())
+            ->orderBy('o.id', 'DESC')
             ->getQuery()
             ->getResult()
             ;
