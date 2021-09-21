@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Classe\Search;
 use App\Entity\Chat;
 use App\Entity\Commentaire;
+use App\Entity\Images;
 use App\Form\ChatType;
 use App\Form\CommentaireType;
 use App\Form\SearchType;
@@ -71,9 +72,6 @@ class ChatController extends AbstractController
     ): Response
 
     {
-
-
-
         $commentaires = $commentaireRepository->findCommentaires($chat);
         $commentaire = new Commentaire();
         $form = $this->createForm(CommentaireType::class, $commentaire);
@@ -85,6 +83,8 @@ class ChatController extends AbstractController
 
             return  $this->redirectToRoute('chat_details', ['nom'=> $chat->getNom()]);
         }
+
+
 
 
         return  $this->render('chat/details.html.twig', [

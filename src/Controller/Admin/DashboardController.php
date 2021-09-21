@@ -7,6 +7,7 @@ use App\Entity\Categorie;
 use App\Entity\Chat;
 use App\Entity\Commentaire;
 use App\Entity\Disparu;
+use App\Entity\Images;
 use App\Entity\Libre;
 use App\Entity\User;
 use App\Entity\Utilisateur;
