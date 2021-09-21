@@ -96,7 +96,7 @@
                         <!-- Heading -->
                         <h6 class="d-flex mb-0 text-uppercase">
                             Histoire
-                            <span class="ms-auto">{{ chat.histoire }}</span>
+                            <span class="ms-auto">{{ chat.histoire| u.truncate(150,'...',false) }}</span>
                         </h6>
 
                     </li>
@@ -106,7 +106,7 @@
                         <!-- Heading -->
                         <h6 class="d-flex mb-0 text-uppercase">
                             Caractère
-                            <span class="ms-auto">{{ chat.caractere }}</span>
+                            <span class="ms-auto">{{ chat.caractere | u.truncate(150,'...',false) }}</span>
                         </h6>
 
                     </li>
@@ -158,11 +158,14 @@
 
             </div>
 
+
             <div class="col-12 col-md-7">
                 <!-- Images -->
-                <section class="pt-md-10">
-                    <img src="uploads/chats/{{chat.file }}" alt="..." class="img-fluid">
-                </section>
+
+                <img src="uploads/chats/{{ chat.file }}" alt="" >
+                <img src="uploads/chats/{{ chat.image }}" alt="">
+                <img src="uploads/chats/{{ chat.img }}" alt="" >
+
             </div>
 
         </div>
@@ -176,6 +179,7 @@
 
     {% include "commentaire/form.html.twig" %}
     {% include"commentaire/commentaires.html.twig" %}
+
 {% endblock %}
 
 

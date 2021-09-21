@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PartenaireController!{% endblock %}
+{% block title %}Nos partenaires!{% endblock %}
 
 {% block body %}
 
@@ -17,7 +17,7 @@
 
             <!-- Text -->
             <p class="lead text-secondary mb-4">
-              We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
+               Tous ceux qui nous aident : sites de clics, sites de protections animales, boutiques en ligne, en ville, etc....
             </p>
 
             <!-- Badges -->
@@ -48,21 +48,24 @@
           <div class="col-12 col-md-4 product">
 
             <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
+            <a class="card card-flush mb-7" href="https://www.jardiland.com/storelocator/store/view/name/saint-malo">
 
               <!-- Image -->
               <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="assets/img/portfolio/portfolio-1.jpg" alt="...">
+                <img class="card-img-top rounded shadow-light-lg" src="{{ asset('img/jardiland.png') }}#!" alt="...">
               </div>
 
               <!-- Footer -->
               <div class="card-footer">
+                <!-- Heading -->
+                <h4 class="mb-0">Jardiland Saint Malo</h4>
 
                 <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-muted">Branding</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Curology Campaign</h4>
+                <h6 class="text-uppercase mb-1 text-muted">ZA La Croix Desilles
+                  35400 Saint-Malo
+                </h6>
+                <p class="text-black">Depuis mi 2018 grâce à Sylvie, cette enseigne nous donne croquettes, pâtées et accessoires invendus.
+                </p>
 
               </div>
 
@@ -72,21 +75,22 @@
           <div class="col-12 col-md-4 resources">
 
             <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
+            <a class="card card-flush mb-7" href="https://www.facile2soutenir.fr/">
 
               <!-- Image -->
               <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="assets/img/portfolio/portfolio-2.jpg" alt="...">
+                <img class="card-img-top rounded shadow-light-lg" src="{{ asset('img/faciledesoutenir.png') }}" alt="...">
               </div>
 
               <!-- Footer -->
               <div class="card-footer">
+                <!-- Heading -->
+                <h4 class="mb-0">Facile2soutenir.</h4>
 
                 <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-muted">Packaging</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Honest Packaging</h4>
+                <h6 class="text-uppercase mb-1 text-muted"></h6>
+                <p class="text-black">Facile2soutenir  permet à Chalonn de collecter des dons grâce à vos achats en ligne.
+                </p>
 
               </div>
 
@@ -96,21 +100,22 @@
           <div class="col-12 col-md-4 ux">
 
             <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
+            <a class="card card-flush mb-7" href="https://www.facebook.com/rapidcroqsaintjouan/">
 
               <!-- Image -->
               <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="assets/img/portfolio/portfolio-3.jpg" alt="...">
+                <img class="card-img-top rounded shadow-light-lg" src="{{ asset('img/animalo.png') }}" alt="...">
               </div>
 
               <!-- Footer -->
               <div class="card-footer">
+                <!-- Heading -->
+                <h4 class="mb-0">Animalo</h4>
 
                 <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-muted">Branding</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Larq Bright Campaign</h4>
+                <h6 class="text-uppercase mb-1 text-muted">1 Rue de l'Île aux Moines, 35430 Saint-Jouan-des-Guérets</h6>
+                <p class="text-black">Cette enseigne, que nous remercions nous donne une partie de ses invendus
+                </p>
 
               </div>
 
@@ -124,17 +129,19 @@
 
               <!-- Image -->
               <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="assets/img/portfolio/portfolio-4.jpg" alt="...">
+                <img class="card-img-top rounded shadow-light-lg" src="{{ asset('img/asso.png') }}" alt="...">
               </div>
 
               <!-- Footer -->
               <div class="card-footer">
 
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-muted">Ideation</h6>
-
                 <!-- Heading -->
-                <h4 class="mb-0">Doodle Pads</h4>
+                <h4 class="mb-0">Association Soutien Animaux Solidaire</h4>
+
+                <!-- Preheading -->
+                <h6 class="text-uppercase mb-1 text-muted"></h6>
+                <p class="text-black">@Soutienanimauxsolidaire · Organisation à but non lucratif.
+                </p>
 
               </div>
 
@@ -144,21 +151,54 @@
           <div class="col-12 col-md-4 product">
 
             <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
+            <a class="card card-flush mb-7" href="https://www.truffaut.com/stores/saint-malo">
 
               <!-- Image -->
               <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="assets/img/portfolio/portfolio-5.jpg" alt="...">
+                <img class="card-img-top rounded shadow-light-lg" src="{{ asset('img/truffau.png') }}" alt="...">
               </div>
 
               <!-- Footer -->
               <div class="card-footer">
 
+                                <!-- Heading -->
+                <h4 class="mb-0">TRUFFAUT Saint Jouan Des Guéret</h4>
+
                 <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-muted">Branding</h6>
+                <h6 class="text-uppercase mb-1 text-muted">Le Moulin du Domaine
+                  35430 Saint Jouan-des-Guérets - à proximité de Saint Malo</h6>
+
+                <p class="text-black">Depuis mi 2018 grâce à Sylvie, cette enseigne nous donne croquettes, pâtées  invendus.
+                </p>
+              </div>
+
+            </a>
+
+          </div>
+
+          <div class="col-12 col-md-4 product">
+
+            <!-- Card -->
+            <a class="card card-flush mb-7" href="https://www.zooplus.fr/?mkt_source=307253&clickid=2109211444370380642">
+
+              <!-- Image -->
+              <div class="card-zoom">
+                <img class="card-img-top rounded shadow-light-lg" src="{{ asset('img/zooplus.png') }}" alt="...">
+              </div>
+
+              <!-- Footer -->
+              <div class="card-footer">
 
                 <!-- Heading -->
-                <h4 class="mb-0">Larq Earthtones Collection</h4>
+                <h4 class="mb-0">Zooplus</h4>
+
+
+                <!-- Preheading -->
+                <h6 class="text-uppercase mb-1 text-muted"></h6>
+                <p class="text-black"> En cliquant sur le liens (l'image) vos achats sur le site, permeteront
+                  à l'asso de recevoir un commission de la part de Zooplus. La comission est calculée en fonction
+                  de la valeur HT de vos produits achetés.
+                </p>
 
               </div>
 
@@ -168,55 +208,37 @@
           <div class="col-12 col-md-4 resources">
 
             <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
+            <a class="card card-flush mb-7" href="https://trocr.com/organization/public/W221001884">
 
               <!-- Image -->
               <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="assets/img/portfolio/portfolio-6.jpg" alt="...">
+                <img class="card-img-top rounded shadow-light-lg" src="{{ asset('img/troc.png')}}" alt="...">
               </div>
 
               <!-- Footer -->
               <div class="card-footer">
 
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-muted">Product Design</h6>
+                                <!-- Heading -->
+                <h4 class="mb-0">Troc'r</h4>
 
-                <!-- Heading -->
-                <h4 class="mb-0">Goby Brush Prototype</h4>
+                <!-- Preheading -->
+                <h6 class="text-uppercase mb-1 text-muted"></h6>
+
+
+                <p class="text-black">En vendant des objets sur cette appli , l'integralité du montant de la vente va à l'asso.
+                </p>
+
 
               </div>
 
             </a>
 
           </div>
-          <div class="col-12 col-md-4 product">
+
+       {#   <div class="col-12 col-md-4 ux">
 
             <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="assets/img/portfolio/portfolio-7.jpg" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-muted">Product Design</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Larq Bottle Redesign</h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 ux">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
+            <a class="card card-flush mb-7" href="https://www.helloasso.com/associations/chalonn/formulaires/1">
 
               <!-- Image -->
               <div class="card-zoom">
@@ -260,7 +282,7 @@
 
             </a>
 
-          </div>
+          </div>#}
         </div>
       </div>
     </section>

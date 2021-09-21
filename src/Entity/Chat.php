@@ -125,10 +125,18 @@ class Chat
      */
     private $reserve;
 
+
     /**
-     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="chat")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $images;
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img;
+
+
 
 
     public function __construct()
@@ -136,6 +144,7 @@ class Chat
         $this->categorie = new ArrayCollection();
         $this->commentaires = new ArrayCollection();
         $this->images = new ArrayCollection();
+        $this->carroussels = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -428,34 +437,40 @@ class Chat
     }
 
     /**
-     * @return Collection|Images[]
+     * @return Collection|Carroussel[]
      */
-    public function getImages(): Collection
+    public function getCarroussels(): Collection
     {
-        return $this->images;
+        return $this->carroussels;
     }
 
-    public function addImage(Images $image): self
+
+
+    public function getImage(): ?string
     {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setChat($this);
-        }
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
 
-    public function removeImage(Images $image): self
+    public function getImg(): ?string
     {
-        if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getChat() === $this) {
-                $image->setChat(null);
-            }
-        }
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }
+
+
 
 
 

@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Classe\Search;
 use App\Entity\Chat;
 use App\Entity\Commentaire;
-use App\Entity\Images;
+use App\Entity\Carroussel;
 use App\Form\ChatType;
 use App\Form\CommentaireType;
 use App\Form\SearchType;
