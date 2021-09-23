@@ -5,14 +5,11 @@ namespace App\Controller;
 use App\Classe\Search;
 use App\Entity\Chat;
 use App\Entity\Commentaire;
-use App\Entity\Carroussel;
-use App\Form\ChatType;
 use App\Form\CommentaireType;
 use App\Form\SearchType;
 use App\Repository\ChatRepository;
 use App\Repository\CommentaireRepository;
 use App\Service\CommentaireService;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,7 +32,8 @@ class ChatController extends AbstractController
         ChatRepository $chatRepository,
         PaginatorInterface $paginator,
         Request $request
-   ) : Response
+
+       ) : Response
     {
         $data = $chatRepository->findby([], ['id'=> 'DESC']);
 

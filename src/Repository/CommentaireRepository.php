@@ -32,7 +32,7 @@ class CommentaireRepository extends ServiceEntityRepository
         }
 
         return $this->createQueryBuilder('o')
-           ->andWhere('o.' .$object . '= :val')
+          ->andWhere('o.' .$object . '= :val')
             ->andWhere('o.isPublished= true')
            ->setParameter('val', $value->getId())
             ->orderBy('o.id', 'DESC')

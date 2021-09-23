@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Devenir famille d'accueil
+{% endblock %}
+
+{% block body %}
+
+<!-- CONTENT -->
+<section>
+    <div class="container  flex-column">
+        <div class="row align-items        justify-content-center gx-0 min-vh-100">
+            <div class="col-12 col-md-6 col-lg-4 py-8 py-md-11">
+
+                <!-- Heading -->
+                <h1 class="mb-0 fw-bold">
+                   Devenir famille d'accueil
+                </h1>
+                </br></br>
+
+            {{ form(form) }}
+
+
+                <?php
+    $retour = mail('f.cousin@hotmail.fr', 'Envoi depuis la page Contact', $_POST['message'], 'From : webmaster@monsite.fr');
+
+
+            </div>
+            <div class="col-lg-7 offset-lg-1 align-self-stretch d-none d-lg-block" data-aos="fade-left">
+
+                <!-- Image -->
+                <div class="h-50 w-cover bg-cover" style="background-image: {{ asset('img/accueil.jpg') }};"></div>
+
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+</section>
+
+
+
+
+
+
+{% endblock %}
+
+
