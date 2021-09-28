@@ -1,5 +1,5 @@
 <section>
-    {% for com in commentaires %}
+    {% for commentaire in commentaires %}
     <div class="container mb-2">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-9 col-xl-8">
@@ -9,10 +9,10 @@
                         <div class="card-body">
                             <blockquote class="mb-0 text-center">
                                 <p>
-                                    {{ com.contenu }}
+                                    {{ commentaire.contenu }}
                                 </p>
                                 <footer class="blockquote-footer">
-                                    <span class="h6 text-uppercase">Par {{ com.auteur }} le {{ com.createdAt|date('d/m/Y') }}</span>
+                                    <span class="h6 text-uppercase">Par {{ commentaire.auteur }} le {{ commentaire.createdAt|date('d/m/Y') }}</span>
                                 </footer>
                             </blockquote>
                         </div>

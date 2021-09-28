@@ -436,13 +436,7 @@ class Chat
         return $this->nom;
     }
 
-    /**
-     * @return Collection|Carroussel[]
-     */
-    public function getCarroussels(): Collection
-    {
-        return $this->carroussels;
-    }
+
 
 
 
