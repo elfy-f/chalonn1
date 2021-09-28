@@ -23,39 +23,43 @@ class ChatController extends AbstractController
 
     public function __construct(EntityManagerInterface $entityManager)
     {
-        $this->entityManager=$entityManager;
+        $this->entityManager = $entityManager;
     }
+
+
+
+
     /**
      * @Route("/adoption", name="adoption")
      */
     public function adoption(
-        ChatRepository $chatRepository,
+        ChatRepository     $chatRepository,
         PaginatorInterface $paginator,
-        Request $request
+        Request            $request
 
-       ) : Response
+    ): Response
     {
-        $data = $chatRepository->findby([], ['id'=> 'DESC']);
+        $data = $chatRepository->findby([], ['id' => 'DESC']);
 
         $chats = $paginator->paginate(
             $data,
-            $request->query->getInt('page',1),/*numero de page*/
+            $request->query->getInt('page', 1),/*numero de page*/
             6 /*limite par page*/
         );
-        $chats= $this->entityManager->getRepository(Chat::class)->findAll();
+        $chats = $this->entityManager->getRepository(Chat::class)->findAll();
         $search = new Search();
-        $form =$this->createForm(SearchType::class, $search);
+        $form = $this->createForm(SearchType::class, $search);
 
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
-           $chats =  $this->entityManager->getRepository(Chat::class)->findWithSearch($search);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $chats = $this->entityManager->getRepository(Chat::class)->findWithSearch($search);
         }
 
         return $this->render('chat/adoption.html.twig', [
             'chats' => $chats,
-            'form'=> $form->createView()
+            'form' => $form->createView()
         ]);
     }
 
@@ -64,9 +68,9 @@ class ChatController extends AbstractController
      */
     public function details(
         Chat $chat,
-         Request $request,
+        Request $request,
         CommentaireService $commentaireService,
-         CommentaireRepository $commentaireRepository
+        CommentaireRepository $commentaireRepository
     ): Response
 
     {
@@ -75,23 +79,20 @@ class ChatController extends AbstractController
         $form = $this->createForm(CommentaireType::class, $commentaire);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $commentaire = $form->getData();
             $commentaireService->persistCommentaire($commentaire, null, $chat);
 
-            return  $this->redirectToRoute('chat_details', ['nom'=> $chat->getNom()]);
+            return $this->redirectToRoute('chat_details', ['nom' => $chat->getNom()]);
         }
 
 
+        return $this->render('chat/details.html.twig', [
 
-
-        return  $this->render('chat/details.html.twig', [
-
-            'chat'=>$chat,
-            'form'=>$form->createView(),
-            'commentaires'=>$commentaires,
+            'chat' => $chat,
+            'form' => $form->createView(),
+            'commentaires' => $commentaires,
         ]);
-
 
     }
 
