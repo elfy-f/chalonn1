@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}
- Chat à la loupe
+    Chat à la loupe
 {% endblock %}
 
 {% block body %}
@@ -15,64 +15,64 @@
                 <aside class="flex-grow-1 py-8 py-md-10">
                     <ul>
 
-                    <!-- Brand -->
-                    <div >
-                        <h2>{{ chat.nom }}</h2>
+                        <!-- Brand -->
+                        <div >
+                            <h2>{{ chat.nom }}</h2>
                             {% for categorie in chat.categorie %}
                                 <span class="badge bg-secondary">{{ categorie.nom }}</span>
                             {% endfor %}
-                    </div>
+                        </div>
 
-                    <p class="list-group list-group-flush">
+                        <p class="list-group list-group-flush">
 
-                        {% if chat.reserve %}
+                            {% if chat.reserve %}
                             <li class=" list-group-item">
                         <h6 class="d-flex mb-0 text-uppercase">
-                        <strong>  est Réservé(e)!!</strong>
-                        <span class="ms-auto"></span>
-                    </h6>
+                            <strong>  est Réservé(e)!!</strong>
+                            <span class="ms-auto"></span>
+                        </h6>
 
-                    {% endif %}
+                        {% endif %}
 
                         <li class="list-group-item">
 
                             <!-- Heading -->
-                    <h6 class="d-flex mb-0 text-uppercase">
-                        Nom
-                        <span class="ms-auto">{{ chat.nom }}</span>
-                    </h6>
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Nom
+                                <span class="ms-auto">{{ chat.nom }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
                         <li class="list-group-item">
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
                                 Date de naissance
-                        <span class="ms-auto">{{ chat.dateNaissance|date('d/m/Y') }}</span>
+                                <span class="ms-auto">{{ chat.dateNaissance|date('d/m/Y') }}</span>
                             </h6>
 
                         </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                            Race
-                            <span class="ms-auto">{{ chat.race }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Race
+                                <span class="ms-auto">{{ chat.race }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                            Robe
-                            <span class="ms-auto">{{ chat.pelage }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Robe
+                                <span class="ms-auto">{{ chat.pelage }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
                         <li class="list-group-item">
 
@@ -83,76 +83,76 @@
                             </h6>
 
                         </li>
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                           Stérilisé
-                            <span class="ms-auto">{{ chat.sterelise }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Stérilisé
+                                <span class="ms-auto">{{ chat.sterelise }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                            Histoire
-                            <span class="ms-auto">{{ chat.histoire| u.truncate(150,'...',false) }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Histoire
+                                <span class="ms-auto">{{ chat.histoire| u.truncate(150,'...',false) }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                            Caractère
-                            <span class="ms-auto">{{ chat.caractere | u.truncate(150,'...',false) }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Caractère
+                                <span class="ms-auto">{{ chat.caractere | u.truncate(150,'...',false) }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                            Teste Fiv (sida du chat)
-                            <span class="ms-auto">{{ chat.testFiv }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Teste Fiv (sida du chat)
+                                <span class="ms-auto">{{ chat.testFiv }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                            Teste Felv (Leucose du chat)
-                            <span class="ms-auto">{{ chat.testFelv }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Teste Felv (Leucose du chat)
+                                <span class="ms-auto">{{ chat.testFelv }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                            Frais d'adoption
-                            <span class="ms-auto">{{ chat.frais }}
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Frais d'adoption
+                                <span class="ms-auto">{{ chat.frais }}
                             €</span>
-                        </h6>
+                            </h6>
 
-                    </li>
+                        </li>
 
-                    <li class="list-group-item">
+                        <li class="list-group-item">
 
-                        <!-- Heading -->
-                        <h6 class="d-flex mb-0 text-uppercase">
-                           Contacter la famille d'accueil
-                            <span class="ms-auto">{{ chat.contact }}</span>
-                        </h6>
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Contacter la famille d'accueil
+                                <span class="ms-auto">{{ chat.contact }}</span>
+                            </h6>
 
-                    </li>
+                        </li>
 
                     </ul>
 

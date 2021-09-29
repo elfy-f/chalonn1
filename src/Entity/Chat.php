@@ -139,12 +139,14 @@ class Chat
 
 
 
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
         $this->commentaires = new ArrayCollection();
         $this->images = new ArrayCollection();
         $this->carroussels = new ArrayCollection();
+        $this->photos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -463,6 +465,9 @@ class Chat
 
         return $this;
     }
+
+
+
 
 
 

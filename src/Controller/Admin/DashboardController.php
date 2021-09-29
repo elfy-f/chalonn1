@@ -9,6 +9,7 @@ use App\Entity\Commentaire;
 use App\Entity\Disparu;
 use App\Entity\Carroussel;
 use App\Entity\Libre;
+use App\Entity\Photo;
 use App\Entity\User;
 use App\Entity\Utilisateur;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
