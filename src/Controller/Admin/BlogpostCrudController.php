@@ -31,7 +31,7 @@ class BlogpostCrudController extends AbstractCrudController
             ImageField::new('file')
                 ->setBasePath('uploads/actu')
                 ->setUploadDir('public/uploads/actu')
-                ->setUploadedFileNamePattern('[randomhash], [extension]')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
 
         ];

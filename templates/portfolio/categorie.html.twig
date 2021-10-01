@@ -43,9 +43,9 @@
                     <div class="col-12 col-md-4 ">
 
                         <!-- Card -->
-                        <a class="card shadow-light-lg mb-7" href="#!" data-bigpicture='{"imgSrc": "{{ (vich_uploader_asset(chat,'imageFile')) }}}'>
+                        <a class="card shadow-light-lg mb-7" href="#!" data-bigpicture='{"imgSrc": "{{ asset('uploads/chats/'~ chat.file) }}}'>
                             <div class="card-zoom">
-                                <img class="card-img"  src="{{ (vich_uploader_asset(chat,'imageFile')) }}" alt="..."/>
+                                <img class="card-img"  src="{{ asset('uploads/chats/'~ chat.file) }}" alt="..."/>
 
                             </div>
                         </a>

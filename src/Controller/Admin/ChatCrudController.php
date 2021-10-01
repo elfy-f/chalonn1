@@ -45,19 +45,19 @@ class ChatCrudController extends AbstractCrudController
              ImageField::new('file')
                  ->setBasePath('uploads/chats')
                 ->setUploadDir('public/uploads/chats')
-                ->setUploadedFileNamePattern('[randomhash], [extension]')
+               ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
 
             ImageField::new('image')
                 ->setBasePath('uploads/chats')
                 ->setUploadDir('public/uploads/chats')
-                ->setUploadedFileNamePattern('[randomhash], [extension]')
+               ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
 
             ImageField::new('img')
                 ->setBasePath('uploads/chats')
                 ->setUploadDir('public/uploads/chats')
-                ->setUploadedFileNamePattern('[randomhash], [extension]')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
 
 

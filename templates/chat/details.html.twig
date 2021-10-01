@@ -164,9 +164,9 @@
             <div class="col-12 col-md-7">
 
 
-                <img src="uploads/chats/{{ chat.file }}" alt= "">
-                <img src="uploads/chats/{{ chat.image }}" alt="">
-                <img src="uploads/chats/{{ chat.img }}" alt="" >
+                <img src="{{ asset('uploads/chats/'~ chat.file) }}" alt= "">
+                <img src="{{ asset('uploads/chats/'~ chat.image) }}">
+                <img src="{{ asset('uploads/chats/'~ chat.img )}}" alt="" >
 
             </div>
 

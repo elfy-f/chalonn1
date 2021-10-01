@@ -25,7 +25,7 @@ class LibreCrudController extends AbstractCrudController
             ImageField::new('carte')
                 ->setBasePath('uploads/disparu')
                 ->setUploadDir('public/uploads/disparu')
-                ->setUploadedFileNamePattern('[randomhash], [extension]')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
             TextField::new('nombreChat'),
             TextareaField::new('histoire'),

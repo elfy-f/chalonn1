@@ -24,7 +24,7 @@ class DisparuCrudController extends AbstractCrudController
             ImageField::new('image')
                 ->setBasePath('uploads/disparu')
                 ->setUploadDir('public/uploads/disparu')
-                ->setUploadedFileNamePattern('[randomhash], [extension]')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
             TextareaField::new('histoire')->hideOnIndex(),
             SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(),
