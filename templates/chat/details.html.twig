@@ -38,7 +38,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Nom
+                                Nom:
                                 <span class="ms-auto">{{ chat.nom }}</span>
                             </h6>
 
@@ -48,7 +48,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Date de naissance
+                                Date de naissance:
                                 <span class="ms-auto">{{ chat.dateNaissance|date('d/m/Y') }}</span>
                             </h6>
 
@@ -58,7 +58,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Race
+                                Race:
                                 <span class="ms-auto">{{ chat.race }}</span>
                             </h6>
 
@@ -68,7 +68,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Robe
+                                Robe:
                                 <span class="ms-auto">{{ chat.pelage }}</span>
                             </h6>
 
@@ -78,7 +78,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Sexe
+                                Sexe:
                                 <span class="ms-auto">{{ chat.sexe }}</span>
                             </h6>
 
@@ -87,7 +87,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Stérilisé
+                                Stérilisé:
                                 <span class="ms-auto">{{ chat.sterelise }}</span>
                             </h6>
 
@@ -97,8 +97,8 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Histoire
-                                <span class="ms-auto">{{ chat.histoire| u.truncate(150,'...',false) }}</span>
+                                Histoire:
+                                <span class="ms-auto">{{ chat.histoire| u.truncate(100,'...',false) }}</span>
                             </h6>
 
                         </li>
@@ -107,8 +107,8 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Caractère
-                                <span class="ms-auto">{{ chat.caractere | u.truncate(150,'...',false) }}</span>
+                                Caractère:
+                                <span class="ms-auto">{{ chat.caractere |u.truncate(100, '...', false) }}</span>
                             </h6>
 
                         </li>
@@ -117,7 +117,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Teste Fiv (sida du chat)
+                                Teste Fiv (sida du chat):
                                 <span class="ms-auto">{{ chat.testFiv }}</span>
                             </h6>
 
@@ -127,7 +127,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Teste Felv (Leucose du chat)
+                                Teste Felv (Leucose du chat):
                                 <span class="ms-auto">{{ chat.testFelv }}</span>
                             </h6>
 
@@ -137,7 +137,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Frais d'adoption
+                                Frais d'adoption:
                                 <span class="ms-auto">{{ chat.frais }}
                             €</span>
                             </h6>
@@ -148,7 +148,7 @@
 
                             <!-- Heading -->
                             <h6 class="d-flex mb-0 text-uppercase">
-                                Contacter la famille d'accueil
+                                Contacter la famille d'accueil:
                                 <span class="ms-auto">{{ chat.contact }}</span>
                             </h6>
 
@@ -163,10 +163,10 @@
 
             <div class="col-12 col-md-7">
 
+                <img src="{{ asset('uploads/chats/'~ chat.image) }}" height="600" width="auto" >
+                <img src="{{ asset('uploads/chats/'~ chat.img )}}" height="600" width="auto">
+                <img src="{{ asset('uploads/chats/'~ chat.file) }}" height="600" width="auto">
 
-                <img src="{{ asset('uploads/chats/'~ chat.file) }}" alt= "">
-                <img src="{{ asset('uploads/chats/'~ chat.image) }}">
-                <img src="{{ asset('uploads/chats/'~ chat.img )}}" alt="" >
 
             </div>
 
