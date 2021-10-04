@@ -1,20 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ParrainController!{% endblock %}
+{% block title %}Parrainage{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<  <!-- SECTION -->
+    <section class="py-6 py-md-8">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+                    <!-- Heading -->
+                    <h3 class="fw-bold">
+                       Qu'est ce que le parrainage?
+                    </h3>
+                    <h5 class="fw-bold">
+                        Coté finance
+                    </h5>
+                    <!-- Text -->
+                    <p class="mb-7">
+                        Le parrainage est un don qui sera affecté à un chat de l'association en particulier.
+                        Le parrainage étant assimilé à un don, vous recevrez un reçu fiscal, vous donnant droit à une déduction fiscale de 66 %,
+                        dans la limite de 20% de votre revenu imposable.
+                    </p>
+                    <h5 class="fw-bold">
+                        Coté chat
+                    </h5>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/chalonn/src/Controller/ParrainController.php'|file_link(0) }}">src/Controller/ParrainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/chalonn/templates/parrain/index.html.twig'|file_link(0) }}">templates/parrain/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+                            <!-- Text -->
+                            <p>
+                               Le parrainage permet le financement des soins du chat choisi.
+                                Les chats qui sont à parrainer ont des soins, suivis vétérinaire, traitements longue durée.
+                                C'est une façon d'aider l'association et en particulier un chat.
+                            </p>
+
+                    <h3 class="fw-bold">
+                       Comment faire?
+                    </h3>
+
+                            <!-- Text -->
+                            <p>
+                               Vous pouvez contacter l'association
+                                <a class="" href="{{path('contact')}}">
+                                   ici
+                                </a>
+                                ,en précisant le chat que vous souhaitez parrainer, ainsi que le montant mensuel ou annuel.<br><br>
+
+                                Puis <a class = "" href=https://www.paypal.com/donate/?token=0SGIhobktM19odeF796iQJ8qe7Rd5CdRaejdIEtQ7_e25g0kWzmqZ021JbnRfPjktaAJf8B9_3TRIQnP&locale.x=FR" class=" nav-link" >
+                                    ici</a>
+                                afin de faire votre don.
+                                <br><br>
+                            </p>
+
+
+                    </ul>
+                </div>
+            </div>
+            <!-- / .row -->
+        </div>
+        <!-- / .container -->
+    </section>
+
+
 {% endblock %}
