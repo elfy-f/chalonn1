@@ -34,125 +34,272 @@
 
                         {% endif %}
 
-                        <li class="list-group-item">
+                        <div class="list-group-item d-flex align-items-center">
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Nom:
-                                <span class="ms-auto">{{ chat.nom }}</span>
-                            </h6>
+                            <!-- Text -->
+                            <div class="me-auto">
 
-                        </li>
 
-                        <li class="list-group-item">
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                    Prénom
+                                </p>
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Date de naissance:
-                                <span class="ms-auto">{{ chat.dateNaissance|date('d/m/Y') }}</span>
-                            </h6>
+                                <p class="fw-bold mb-1">
+                                    {{chat.nom }}
+                                </p>
+                            </div>
 
-                        </li>
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
 
-                        <li class="list-group-item">
+                        </div>
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Race:
-                                <span class="ms-auto">{{ chat.race }}</span>
-                            </h6>
+                        <div class="list-group-item d-flex align-items-center">
 
-                        </li>
+                            <!-- Text -->
+                            <div class="me-auto">
 
-                        <li class="list-group-item">
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Robe:
-                                <span class="ms-auto">{{ chat.pelage }}</span>
-                            </h6>
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                    Date de naissance
+                                </p>
 
-                        </li>
+                                <p class="fw-bold mb-1">
+                                   {{chat.dateNaissance|date('d/m/Y') }}
+                                </p>
+                            </div>
 
-                        <li class="list-group-item">
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Sexe:
-                                <span class="ms-auto">{{ chat.sexe }}</span>
-                            </h6>
+                        </div>
 
-                        </li>
-                        <li class="list-group-item">
+                        <div class="list-group-item d-flex align-items-center">
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Stérilisé:
-                                <span class="ms-auto">{{ chat.sterelise }}</span>
-                            </h6>
+                            <!-- Text -->
+                            <div class="me-auto">
 
-                        </li>
 
-                        <li class="list-group-item">
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                   Race
+                                </p>
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Histoire:
-                                <span class="ms-auto">{{ chat.histoire| u.truncate(100,'...',false) }}</span>
-                            </h6>
+                                <p class="fw-bold mb-1">
+                                    {{chat.race }}
+                                </p>
+                            </div>
 
-                        </li>
 
-                        <li class="list-group-item">
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Caractère:
-                                <span class="ms-auto">{{ chat.caractere |u.truncate(100, '...', false) }}</span>
-                            </h6>
+                        </div>
 
-                        </li>
+                        <div class="list-group-item d-flex align-items-center">
 
-                        <li class="list-group-item">
+                            <!-- Text -->
+                            <div class="me-auto">
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Teste Fiv (sida du chat):
-                                <span class="ms-auto">{{ chat.testFiv }}</span>
-                            </h6>
 
-                        </li>
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                   Robe
+                                </p>
 
-                        <li class="list-group-item">
+                                <p class="fw-bold mb-1">
+                                    {{chat.pelage }}
+                                </p>
+                            </div>
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Teste Felv (Leucose du chat):
-                                <span class="ms-auto">{{ chat.testFelv }}</span>
-                            </h6>
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
 
-                        </li>
+                        </div>
 
-                        <li class="list-group-item">
+                        <div class="list-group-item d-flex align-items-center">
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Frais d'adoption:
-                                <span class="ms-auto">{{ chat.frais }}
-                            €</span>
-                            </h6>
+                            <!-- Text -->
+                            <div class="me-auto">
 
-                        </li>
 
-                        <li class="list-group-item">
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                    Sexe
+                                </p>
 
-                            <!-- Heading -->
-                            <h6 class="d-flex mb-0 text-uppercase">
-                                Contacter la famille d'accueil:
-                                <span class="ms-auto">{{ chat.contact }}</span>
-                            </h6>
+                                <p class="fw-bold mb-1">
+                                    {{chat.sexe}}
+                                </p>
+                            </div>
 
-                        </li>
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item d-flex align-items-center">
+
+                            <!-- Text -->
+                            <div class="me-auto">
+
+
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                    Stérélisé
+                                </p>
+
+                                <p class="fw-bold mb-1">
+                                    {{chat.sterelise }}
+                                </p>
+                            </div>
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item d-flex align-items-center">
+
+                            <!-- Text -->
+                            <div class="me-auto">
+
+
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                   Histoire
+                                </p>
+
+                                <p class="fw-bold mb-1">
+                                    {{chat.histoire| u.truncate(200,'...',false)}}
+                                </p>
+                            </div>
+
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item d-flex align-items-center">
+
+                            <!-- Text -->
+                            <div class="me-auto">
+
+
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                   Caractère
+                                </p>
+
+                                <p class="fw-bold mb-1">
+                                    {{ chat.caractere |u.truncate(200,'...',false) }}
+                                </p>
+                            </div>
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item d-flex align-items-center">
+
+                            <!-- Text -->
+                            <div class="me-auto">
+
+
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                   Testé fiv (test sérologique qui permet de voir si {{ chat.nom }} est porteur du sida du chat)
+                                </p>
+
+                                <p class="fw-bold mb-1">
+                                    {{chat.testFiv }}
+                                </p>
+                            </div>
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item d-flex align-items-center">
+
+                            <!-- Text -->
+                            <div class="me-auto">
+
+
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                    Testé Felv (test sérologique qui permet de voir si {{ chat.nom }} est porteur de la leucose)
+                                </p>
+
+                                <p class="fw-bold mb-1">
+                                    {{chat.testFelv }}
+                                </p>
+                            </div>
+
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item d-flex align-items-center">
+
+                            <!-- Text -->
+                            <div class="me-auto">
+
+
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                    Frais d'adoption
+                                </p>
+
+                                <p class="fw-bold mb-1">
+                                    {{chat.frais }}€
+                                </p>
+                            </div>
+                            <!-- Check -->
+                            <div class="badge badge-rounded-circle bg-success-soft ms-4">
+                                <i class="fe fe-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item d-flex align-items-center">
+
+                            <!-- Text -->
+                            <div class="me-auto">
+
+
+                                <!-- Text -->
+                                <p class="fs-sm text-muted mb-0">
+                                    Famille d'accueil à contacter
+                                </p>
+
+                                <p class="fw-bold mb-1">
+                                    {{chat.contact }}
+                                </p>
+                            </div>
+
 
                     </ul>
 
