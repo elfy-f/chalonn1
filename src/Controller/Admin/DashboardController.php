@@ -12,11 +12,16 @@ use App\Entity\Libre;
 use App\Entity\Photo;
 use App\Entity\User;
 use App\Entity\Utilisateur;
+use App\Form\RegisterType;
+use App\Security\AppAuthenticator;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 
 class DashboardController extends AbstractDashboardController
@@ -45,8 +50,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Libre', 'fas fa-paw', Libre::class);
         yield MenuItem::linkToCrud('Commentaire', 'fas fa-comment', Commentaire::class);
         yield MenuItem::linkToCrud('Paramètre', 'fas fa-cog', User::class);
-        yield MenuItem::linkToCrud('Donnateur', 'fas fa-smile-beam', Utilisateur::class);
-
+       // yield MenuItem::linkToCrud('Donnateur', 'fas fa-smile-beam', Utilisateur::class);
 
     }
+
+
 }

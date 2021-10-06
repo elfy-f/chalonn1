@@ -79,6 +79,32 @@
                     <p class=" text-muted mb-6 mb-md-8 mb-lg-0">
                         Nous sommes à Médrignac (22), nous aidons les chats des départements voisins également.
                     </p>
+                        <br><br><br>
+
+                    {% if app.user %}
+                        {#   <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a  href="{{path('compte')}}" class=" nav-link" >Mon compte</a>
+                                </li>#}
+
+
+
+                            <a class="text-black" href="{{path('app_logout')}}" class=" nav-link" >Déconnexion</a>
+
+
+                    {% else %}
+
+                                <a class="text-black" href="{{path('app_login')}}" class=" " >Connection admin</a>
+
+
+
+                            {#  <li class="nav-item dropdown">
+                                    <a  href="{{path('register')}}" class=" nav-link" >M'inscrire</a>
+                                </li>#}
+                        </ul>
+
+
+                    {% endif %}
 
                 </div>
 

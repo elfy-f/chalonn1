@@ -15,7 +15,7 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-            return $this->redirectToRoute('compte');
+            return $this->redirectToRoute('easycorp_bundle_easyadmin_abstractdashboard_index');
         }
 
         // get the login error if there is one

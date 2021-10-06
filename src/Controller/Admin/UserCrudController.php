@@ -26,6 +26,7 @@ class UserCrudController extends AbstractCrudController
            TextField::new('prenom'),
             TextField::new('email'),
             TextareaField::new('aPropos'),
+            TextField::new('password'),
 
         ];
     }
@@ -33,8 +34,8 @@ class UserCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-            ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->disable(Action::DELETE, Action::NEW);
+            ->add(Crud::PAGE_INDEX, Action::DETAIL);
+         //   ->disable(Action::DELETE, Action::NEW);
     }
 
     public function configureCrud(Crud $crud): Crud

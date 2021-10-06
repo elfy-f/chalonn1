@@ -53,13 +53,13 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         }
 
 
-        return new RedirectResponse($this->urlGenerator->generate('compte'));
+        return new RedirectResponse($this->urlGenerator->generate('admin'));
 
     }
 
     protected function getLoginUrl(Request $request): string
     {
-        return $this->urlGenerator->generate('compte');
+        return $this->urlGenerator->generate('admin');
     }
 
 
