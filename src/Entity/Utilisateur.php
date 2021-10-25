@@ -45,6 +45,91 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $nom;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $adresse;
+
+    /**
+     * @ORM\Column(type="string", length=6, nullable=true)
+     */
+    private $cp;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $ville;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $accueil;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $telephone;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $nb;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $animaux;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $sterilise;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $chat;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $quarantaine;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $journee;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $vacances;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $libre;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $assurance;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $veto;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $autre;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $non;
+
 
 
     public function getId(): ?int
@@ -156,6 +241,210 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?string $adresse): self
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getCp(): ?string
+    {
+        return $this->cp;
+    }
+
+    public function setCp(?string $cp): self
+    {
+        $this->cp = $cp;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(?string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getAccueil(): ?string
+    {
+        return $this->accueil;
+    }
+
+    public function setAccueil(?string $accueil): self
+    {
+        $this->accueil = $accueil;
+
+        return $this;
+    }
+
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(?string $telephone): self
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getNb(): ?string
+    {
+        return $this->nb;
+    }
+
+    public function setNb(?string $nb): self
+    {
+        $this->nb = $nb;
+
+        return $this;
+    }
+
+    public function getAnimaux(): ?string
+    {
+        return $this->animaux;
+    }
+
+    public function setAnimaux(?string $animaux): self
+    {
+        $this->animaux = $animaux;
+
+        return $this;
+    }
+
+    public function getSterilise(): ?string
+    {
+        return $this->sterilise;
+    }
+
+    public function setSterilise(?string $sterilise): self
+    {
+        $this->sterilise = $sterilise;
+
+        return $this;
+    }
+
+    public function getChat(): ?string
+    {
+        return $this->chat;
+    }
+
+    public function setChat(?string $chat): self
+    {
+        $this->chat = $chat;
+
+        return $this;
+    }
+
+    public function getQuarantaine(): ?string
+    {
+        return $this->quarantaine;
+    }
+
+    public function setQuarantaine(?string $quarantaine): self
+    {
+        $this->quarantaine = $quarantaine;
+
+        return $this;
+    }
+
+    public function getJournee(): ?string
+    {
+        return $this->journee;
+    }
+
+    public function setJournee(?string $journee): self
+    {
+        $this->journee = $journee;
+
+        return $this;
+    }
+
+    public function getVacances(): ?string
+    {
+        return $this->vacances;
+    }
+
+    public function setVacances(?string $vacances): self
+    {
+        $this->vacances = $vacances;
+
+        return $this;
+    }
+
+    public function getLibre(): ?string
+    {
+        return $this->libre;
+    }
+
+    public function setLibre(?string $libre): self
+    {
+        $this->libre = $libre;
+
+        return $this;
+    }
+
+    public function getAssurance(): ?string
+    {
+        return $this->assurance;
+    }
+
+    public function setAssurance(?string $assurance): self
+    {
+        $this->assurance = $assurance;
+
+        return $this;
+    }
+
+    public function getVeto(): ?string
+    {
+        return $this->veto;
+    }
+
+    public function setVeto(?string $veto): self
+    {
+        $this->veto = $veto;
+
+        return $this;
+    }
+
+    public function getAutre(): ?string
+    {
+        return $this->autre;
+    }
+
+    public function setAutre(?string $autre): self
+    {
+        $this->autre = $autre;
+
+        return $this;
+    }
+
+    public function getNon(): ?string
+    {
+        return $this->non;
+    }
+
+    public function setNon(?string $non): self
+    {
+        $this->non = $non;
 
         return $this;
     }
