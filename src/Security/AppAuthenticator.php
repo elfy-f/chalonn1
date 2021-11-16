@@ -5,6 +5,8 @@ namespace App\Security;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\PasswordHasherAwareInterface;
+use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Security;
@@ -22,6 +24,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
     use TargetPathTrait;
 
     public const LOGIN_ROUTE = 'app_login';
+
 
     private UrlGeneratorInterface $urlGenerator;
 
@@ -46,9 +49,9 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey):?Response
     {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
+        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
 
@@ -59,12 +62,14 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     protected function getLoginUrl(Request $request): string
     {
-        return $this->urlGenerator->generate('admin');
+        return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
 
 
     public function supports(Request $request): bool
     {
-        return $request->isMethod('POST') && self::LOGIN_ROUTE === $request->attributes->get('_route');
+       return self::LOGIN_ROUTE===$request->attributes->get('route')
+           &&$request->isMethod('POST');
+        // return $request->isMethod('POST') && self::LOGIN_ROUTE === $request->attributes->get('_route');
     }
 }

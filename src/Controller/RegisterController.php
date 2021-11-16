@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Utilisateur;
 use App\Form\RegisterType;
 use App\Security\AppAuthenticator;
@@ -20,34 +21,41 @@ class RegisterController extends AbstractController
      * @Route("/inscription", name="register")
      */
     public function register (Request $request,
-                              UserPasswordHasherInterface $passwordEncoder,
+                              UserPasswordHasherInterface $passwordHasher,
                               UserAuthenticatorInterface $authenticator,
-                             AppAuthenticator $formAuthenticator
+                             AppAuthenticator $appAuthenticator
                             ): Response
     {
-        $utilisateur = new Utilisateur();
-        $form = $this->createForm(RegisterType::class, $utilisateur);
+        $user = new user();
+        $user->setRoles(['ROLE_ADMIN']);
+       $form = $this->createForm(RegisterType::class, $user);
 
         $form->handleRequest($request);
 
         if ($form -> isSubmitted() && $form->isValid()) {
-            $utilisateur=$form->getData();
-
+           // $utilisateur=$form->getData();
+                $user->setPassword(
+                    $passwordHasher->hashPassword($user,
+                    $form->get('password')->getData()
+                    )
+                );
 
             $entityManager = $this->getDoctrine()->getManager();
-           $entityManager->persist($utilisateur);
+           $entityManager->persist($user);
            $entityManager->flush();
 
            return $authenticator->authenticateUser(
-               $utilisateur,
-               $formAuthenticator,
+               $user,
+               $appAuthenticator,
                $request);
-
-
+          /*  return $this->redirectToRoute('admin');*/
         }
 
+
+
         return $this->render('register/index.html.twig',[
-            'form'=>$form->createView()
+            'registrationForm'=>$form->createView()
         ]);
     }
 }
+
