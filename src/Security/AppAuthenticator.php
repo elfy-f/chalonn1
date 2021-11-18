@@ -5,8 +5,6 @@ namespace App\Security;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\PasswordHasherAwareInterface;
-use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Security;
@@ -68,8 +66,9 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function supports(Request $request): bool
     {
-       return self::LOGIN_ROUTE===$request->attributes->get('route')
+       return self::LOGIN_ROUTE===$request->attributes->get('_route')
            &&$request->isMethod('POST');
         // return $request->isMethod('POST') && self::LOGIN_ROUTE === $request->attributes->get('_route');
     }
 }
+
